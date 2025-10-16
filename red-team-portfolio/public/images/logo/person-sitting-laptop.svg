@@ -1,0 +1,76 @@
+<svg width="128" height="160" viewBox="0 0 128 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Person sitting - more detailed at larger size -->
+  
+  <!-- Head with hair detail -->
+  <circle cx="64" cy="26" r="18" fill="#2a2a2a"/>
+  <path d="M50,20 Q64,10 78,20" fill="#1a1a1a"/> <!-- Hair -->
+  
+  <!-- Neck -->
+  <rect x="58" y="44" width="12" height="8" fill="#2a2a2a" rx="2"/>
+  
+  <!-- Torso/shoulders -->
+  <path d="M40,52 L64,52 L88,52 L88,86 L40,86 Z" fill="#2a2a2a"/>
+  <ellipse cx="64" cy="52" rx="28" ry="12" fill="#1a1a1a"/> <!-- Shoulders -->
+  
+  <!-- Arms reaching to laptop -->
+  <path d="M40,60 L32,74 L38,82" stroke="#2a2a2a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M88,60 L96,74 L90,82" stroke="#2a2a2a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Hands on keyboard -->
+  <ellipse cx="38" cy="82" rx="6" ry="8" fill="#2a2a2a"/>
+  <ellipse cx="90" cy="82" rx="6" ry="8" fill="#2a2a2a"/>
+  
+  <!-- Legs (sitting) -->
+  <path d="M54,86 L54,115 L46,130" stroke="#2a2a2a" stroke-width="7" fill="none"/>
+  <path d="M74,86 L74,115 L82,130" stroke="#2a2a2a" stroke-width="7" fill="none"/>
+  
+  <!-- DETAILED LAPTOP -->
+  <!-- Laptop base/keyboard -->
+  <rect x="28" y="76" width="72" height="28" rx="2" fill="#1a1a1a" stroke="#555" stroke-width="2"/>
+  
+  <!-- Keyboard keys (visible grid) -->
+  <rect x="32" y="80" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="42" y="80" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="52" y="80" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="62" y="80" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="72" y="80" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="82" y="80" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  
+  <rect x="32" y="88" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="42" y="88" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="52" y="88" width="16" height="6" rx="1" fill="#2a2a2a"/> <!-- Spacebar -->
+  <rect x="70" y="88" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  <rect x="82" y="88" width="8" height="6" rx="1" fill="#2a2a2a"/>
+  
+  <!-- Trackpad -->
+  <rect x="50" y="96" width="28" height="6" rx="1" fill="#3a3a3a" stroke="#555" stroke-width="0.5"/>
+  
+  <!-- Laptop screen (open at angle) -->
+  <path d="M30,76 L30,40 L98,40 L98,76 Z" fill="#0a0a0a" stroke="#555" stroke-width="2"/>
+  
+  <!-- Screen bezel -->
+  <rect x="34" y="44" width="60" height="28" rx="1" fill="#001a2a"/> <!-- Dark blue screen -->
+  
+  <!-- Screen content (code editor look) -->
+  <rect x="36" y="46" width="56" height="24" fill="#002a3a"/>
+  <line x1="38" y1="48" x2="50" y2="48" stroke="#00ff88" stroke-width="1"/> <!-- Green code line -->
+  <line x1="38" y1="52" x2="60" y2="52" stroke="#00aaff" stroke-width="1"/> <!-- Blue code line -->
+  <line x1="38" y1="56" x2="55" y2="56" stroke="#ff6600" stroke-width="1"/> <!-- Orange code line -->
+  <line x1="38" y1="60" x2="48" y2="60" stroke="#00ff88" stroke-width="1"/>
+  <line x1="38" y1="64" x2="65" y2="64" stroke="#00aaff" stroke-width="1"/>
+  
+  <!-- Cursor blink -->
+  <rect x="66" y="64" width="2" height="3" fill="#00ffff">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Screen glow (subtle) -->
+  <rect x="34" y="44" width="60" height="28" rx="1" fill="url(#screenGlow)" opacity="0.4"/>
+  
+  <defs>
+    <radialGradient id="screenGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#0080ff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+</svg>

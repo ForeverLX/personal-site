@@ -10,12 +10,18 @@ interface VideoSunriseSunsetProps {
 }
 
 export default function VideoSunriseSunset({ mode, onIntroComplete, className = '' }: VideoSunriseSunsetProps) {
+  const [isClient, setIsClient] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
   const [showSkip, setShowSkip] = useState(false)
   const [hasVideoError, setHasVideoError] = useState(false)
   const sunriseVideoRef = useRef<HTMLVideoElement>(null)
   const sunsetVideoRef = useRef<HTMLVideoElement>(null)
   const sunRef = useRef<HTMLDivElement>(null)
+
+  // Ensure we're on the client side to prevent hydration issues
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // SVG Data URI generator for text masks
   const createTextMask = (text: string) => {
@@ -114,7 +120,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
       >
         {/* Full-screen video background */}
         <div className="absolute inset-0">
-          {!hasVideoError ? (
+          {isClient && !hasVideoError ? (
             <video
               ref={sunriseVideoRef}
               className="w-full h-full object-cover"
@@ -143,7 +149,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
           >
             {/* DARRIUS GRATE with sunrise video */}
             <div className="relative inline-block mb-8">
-              {!hasVideoError && (
+              {isClient && !hasVideoError && (
                 <video
                   className="absolute inset-0 w-full h-full object-cover"
                   autoPlay
@@ -182,7 +188,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
             
             {/* FOREVERLX with sunset video */}
             <div className="relative inline-block">
-              {!hasVideoError && (
+              {isClient && !hasVideoError && (
                 <video
                   className="absolute inset-0 w-full h-full object-cover"
                   autoPlay
@@ -301,7 +307,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
         >
           {/* DARRIUS GRATE with sunrise video */}
           <div className="relative w-full text-center">
-            {!hasVideoError && (
+            {isClient && !hasVideoError && (
               <video
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay
@@ -347,7 +353,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
           
           {/* FOREVERLX with sunset video */}
           <div className="relative w-full text-center">
-            {!hasVideoError && (
+            {isClient && !hasVideoError && (
               <video
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function HomepageVideoBackground() {
+  const [isClient, setIsClient] = useState(false)
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [hasVideoError, setHasVideoError] = useState(false)
   const [isMuted, setIsMuted] = useState(true)
@@ -12,6 +13,11 @@ export default function HomepageVideoBackground() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const controlsTimeoutRef = useRef<NodeJS.Timeout>()
   const [isIntersecting, setIsIntersecting] = useState(false)
+
+  // Check if we're on the client side
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // Intersection observer for performance optimization
   useEffect(() => {
@@ -98,6 +104,11 @@ export default function HomepageVideoBackground() {
         setIsMuted(false)
       }
     }
+  }
+
+  // Return null on server-side to prevent hydration mismatch
+  if (!isClient) {
+    return null
   }
 
   return (

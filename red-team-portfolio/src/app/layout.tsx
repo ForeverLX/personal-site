@@ -1,6 +1,25 @@
 import type { Metadata, Viewport } from 'next'
+import { Cinzel, Playfair_Display, Parisienne } from 'next/font/google'
 import './globals.css'
-import SophisticatedLayout from '@/components/SophisticatedLayout'
+import SimpleLayout from '@/components/SimpleLayout'
+
+const cinzel = Cinzel({ 
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-cinzel'
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-playfair'
+})
+
+const parisienne = Parisienne({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-parisienne'
+})
 
 export const metadata: Metadata = {
   title: 'Darrius Grate | Red Team Operator & Security Researcher',
@@ -41,10 +60,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased">
-        <SophisticatedLayout>
+      <body className={`antialiased ${cinzel.variable} ${playfair.variable} ${parisienne.variable}`}>
+        <SimpleLayout>
           {children}
-        </SophisticatedLayout>
+        </SimpleLayout>
       </body>
     </html>
   )

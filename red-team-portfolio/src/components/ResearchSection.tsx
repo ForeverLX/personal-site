@@ -50,7 +50,7 @@ export default function ResearchSection() {
           Deep-dive technical research, security findings, and analysis from red team operations.
         </motion.p>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <motion.div
             className="p-8 bg-gray-800/30 rounded-lg border border-gray-700/50 backdrop-blur-sm hover:border-red-500/30 transition-all duration-300"
             initial={{ opacity: 0, y: 30 }}
@@ -64,11 +64,20 @@ export default function ResearchSection() {
               Detailed analysis of Active Directory attack vectors, defensive techniques, 
               and tool development insights.
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">C Programming</span>
               <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Active Directory</span>
               <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Security Research</span>
             </div>
+            <motion.button
+              onClick={() => {
+                window.location.href = '/research/ad-attack-paths'
+              }}
+              className="text-red-500 hover:text-red-400 transition-colors duration-200 font-medium"
+              whileHover={{ scale: 1.05 }}
+            >
+              Read Research →
+            </motion.button>
           </motion.div>
           
           <motion.div
@@ -83,13 +92,44 @@ export default function ResearchSection() {
             <p className="text-gray-300 mb-4">
               Technical deep-dives into building high-performance security tools using C programming.
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mb-4">
               <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">C Programming</span>
               <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Tool Development</span>
               <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Performance</span>
             </div>
+            <motion.button
+              onClick={() => {
+                window.location.href = '/research/kernel-exploitation'
+              }}
+              className="text-red-500 hover:text-red-400 transition-colors duration-200 font-medium"
+              whileHover={{ scale: 1.05 }}
+            >
+              Read Research →
+            </motion.button>
           </motion.div>
         </div>
+        
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={() => {
+              window.location.href = '/research'
+            }}
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>View All Research</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   )

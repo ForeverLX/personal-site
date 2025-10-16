@@ -1,0 +1,63 @@
+<svg width="192" height="288" viewBox="0 0 192 288" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main trunk - darkest for depth -->
+  <path d="M90,288 L90,100 Q92,90 96,100 L102,288" fill="#0a0a0a"/>
+  <path d="M92,288 L92,100 Q93,95 96,100 L100,288" fill="#0a0a0a"/>
+  
+  <!-- Primary branches - dark gray -->
+  <path d="M96,100 Q60,80 30,85 Q20,87 10,92" stroke="#1a1a1a" stroke-width="8" fill="none"/>
+  <path d="M96,100 Q132,80 162,85 Q172,87 182,92" stroke="#1a1a1a" stroke-width="8" fill="none"/>
+  <path d="M96,100 Q50,70 20,75 Q10,77 0,82" stroke="#1a1a1a" stroke-width="8" fill="none"/>
+  <path d="M96,100 Q142,70 172,75 Q182,77 192,82" stroke="#1a1a1a" stroke-width="8" fill="none"/>
+  
+  <!-- Upper canopy branches (will form arch when mirrored) -->
+  <path d="M96,70 Q75,50 60,48 Q45,47 30,50" stroke="#1a1a1a" stroke-width="6" fill="none"/>
+  <path d="M96,70 Q117,50 132,48 Q147,47 162,50" stroke="#1a1a1a" stroke-width="6" fill="none"/>
+  <path d="M96,60 Q70,40 55,38 Q40,37 25,40" stroke="#1a1a1a" stroke-width="6" fill="none"/>
+  <path d="M96,60 Q122,40 137,38 Q152,37 167,40" stroke="#1a1a1a" stroke-width="6" fill="none"/>
+  
+  <!-- Secondary branches - medium gray -->
+  <path d="M60,80 Q45,70 35,72 Q25,74 15,76" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M132,80 Q147,70 157,72 Q167,74 177,76" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M50,70 Q35,60 25,62 Q15,64 5,66" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M142,70 Q157,60 167,62 Q177,64 187,66" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M75,50 Q60,40 50,42 Q40,44 30,46" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M117,50 Q132,40 142,42 Q152,44 162,46" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M70,40 Q55,30 45,32 Q35,34 25,36" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  <path d="M122,40 Q137,30 147,32 Q157,34 167,36" stroke="#2a2a2a" stroke-width="6" fill="none"/>
+  
+  <!-- Tertiary branches - lighter gray -->
+  <path d="M45,70 Q35,65 25,67" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M147,70 Q157,65 167,67" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M35,60 Q25,55 15,57" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M157,60 Q167,55 177,57" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M60,50 Q50,45 40,47" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M132,50 Q142,45 152,47" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M55,40 Q45,35 35,37" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M137,40 Q147,35 157,37" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M75,30 Q65,25 55,27" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  <path d="M117,30 Q127,25 137,27" stroke="#3a3a3a" stroke-width="4" fill="none"/>
+  
+  <!-- Fine branches - light gray for definition -->
+  <path d="M30,85 Q25,80 20,82" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M162,85 Q167,80 172,82" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M20,75 Q15,70 10,72" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M172,75 Q177,70 182,72" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M40,48 Q35,43 30,45" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M152,48 Q157,43 162,45" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M35,38 Q30,33 25,35" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M157,38 Q162,33 167,35" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M50,30 Q45,25 40,27" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  <path d="M142,30 Q147,25 152,27" stroke="#4a4a4a" stroke-width="3" fill="none"/>
+  
+  <!-- Extra fine detail branches -->
+  <path d="M25,80 Q20,75 15,77" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M167,80 Q172,75 177,77" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M15,70 Q10,65 5,67" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M177,70 Q182,65 187,67" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M30,45 Q25,40 20,42" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M162,45 Q167,40 172,42" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M25,35 Q20,30 15,32" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M167,35 Q172,30 177,32" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M40,25 Q35,20 30,22" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+  <path d="M152,25 Q157,20 162,22" stroke="#4a4a4a" stroke-width="2" fill="none"/>
+</svg>

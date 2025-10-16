@@ -98,23 +98,35 @@ export default function FeaturedProjectSpotlight() {
                 </div>
               </div>
 
-              {/* CTA Button */}
-              <motion.button
-                onClick={() => {
-                  const element = document.querySelector('#tools')
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' })
-                  }
-                }}
-                className="inline-flex items-center space-x-2 px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span>View Project</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </motion.button>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <motion.button
+                  onClick={() => {
+                    window.location.href = '/projects/aclguard'
+                  }}
+                  className="inline-flex items-center space-x-2 px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>View Project</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </motion.button>
+                <motion.button
+                  onClick={() => {
+                    window.location.href = '/projects'
+                  }}
+                  className="inline-flex items-center space-x-2 px-6 py-3 bg-gray-700 text-white font-medium rounded-lg hover:bg-gray-600 transition-colors duration-200"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>View All Projects</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                  </svg>
+                </motion.button>
+              </div>
             </div>
 
             {/* Project Visual */}

@@ -27,6 +27,28 @@ export default function ContactSection() {
           strengthen your organization's security posture.
         </motion.p>
         
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={() => {
+              window.location.href = '/contact'
+            }}
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>Full Contact Form</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </motion.button>
+        </motion.div>
+        
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* Contact Information */}
           <motion.div

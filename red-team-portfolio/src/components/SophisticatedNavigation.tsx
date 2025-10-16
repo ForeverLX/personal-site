@@ -2,14 +2,21 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import TwoTreesLogo from './TwoTreesLogo'
 
 export default function SophisticatedNavigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const { scrollY } = useScroll()
+  const pathname = usePathname()
+  const router = useRouter()
   
   const backgroundColor = useTransform(scrollY, [0, 100], ['rgba(10, 10, 10, 0)', 'rgba(10, 10, 10, 0.95)'])
   const borderColor = useTransform(scrollY, [0, 100], ['rgba(255, 0, 64, 0)', 'rgba(255, 0, 64, 0.2)'])
+  
+  const isHomepage = pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,23 +27,33 @@ export default function SophisticatedNavigation() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Research', href: '#research' },
-    { name: 'Tools', href: '#tools' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', section: '#home' },
+    { name: 'About', href: '/about', section: '#about' },
+    { name: 'Projects', href: '/projects', section: '#projects' },
+    { name: 'Research', href: '/research', section: '#research' },
+    { name: 'Services', href: '/services', section: '#services' },
+    { name: 'Contact', href: '/contact', section: '#contact' },
   ]
 
-  const scrollToSection = (href: string) => {
-    if (href === '#home') {
+  const scrollToSection = (section: string) => {
+    if (section === '#home') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
     
-    const element = document.querySelector(href)
+    const element = document.querySelector(section)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (isHomepage && item.href === '/') {
+      // On homepage: scroll to top
+      scrollToSection(item.section)
+    } else {
+      // For all other pages: navigate using Next.js router
+      router.push(item.href)
     }
   }
 
@@ -50,22 +67,17 @@ export default function SophisticatedNavigation() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo with Red Galaxy accent */}
+          {/* Animated Tree Logo */}
           <motion.div
             className="flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <button 
-              onClick={() => scrollToSection('#home')}
-              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+              onClick={() => handleNavClick({ name: 'Home', href: '/', section: '#home' })}
+              className="hover:opacity-80 transition-opacity"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">DG</span>
-              </div>
-              <span className="text-white font-medium text-lg">
-                Red Team Portfolio
-              </span>
+              <TwoTreesLogo />
             </button>
           </motion.div>
 
@@ -85,7 +97,7 @@ export default function SophisticatedNavigation() {
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                 >
                   <button
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => handleNavClick(item)}
                     className="relative text-gray-300 hover:text-red-400 transition-colors duration-200 font-medium group"
                   >
                     {item.name}
@@ -157,7 +169,7 @@ export default function SophisticatedNavigation() {
             >
               <button
                 onClick={() => {
-                  scrollToSection(item.href)
+                  handleNavClick(item)
                   setIsOpen(false)
                 }}
                 className="block py-3 text-gray-300 hover:text-red-400 transition-colors duration-200 font-medium w-full text-left"

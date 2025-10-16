@@ -14,6 +14,7 @@ export default function SequentialIntro({ onComplete }: SequentialIntroProps) {
   const [showSkipButton, setShowSkipButton] = useState(false)
   const [useDramaticTransition, setUseDramaticTransition] = useState(true)
   const [fps, setFps] = useState(60)
+  const [isMounted, setIsMounted] = useState(false)
   const [videoErrors, setVideoErrors] = useState<{ sunrise: boolean; sunset: boolean }>({
     sunrise: false,
     sunset: false
@@ -32,6 +33,11 @@ export default function SequentialIntro({ onComplete }: SequentialIntroProps) {
   useEffect(() => {
     onCompleteRef.current = onComplete
   }, [onComplete])
+
+  // Set mounted state for client-only rendering
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Performance monitoring
   useEffect(() => {
@@ -336,7 +342,7 @@ export default function SequentialIntro({ onComplete }: SequentialIntroProps) {
   return (
     <div className="fixed inset-0 z-50 bg-black overflow-hidden">
       {/* Performance monitor (dev only) */}
-      {process.env.NODE_ENV === 'development' && (
+      {process.env.NODE_ENV === 'development' && isMounted && (
         <div className="absolute top-4 left-4 z-50 bg-black/50 text-white px-2 py-1 rounded text-sm">
           FPS: {fps}
         </div>

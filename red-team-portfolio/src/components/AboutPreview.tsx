@@ -45,10 +45,7 @@ export default function AboutPreview() {
             
             <motion.button
               onClick={() => {
-                const element = document.querySelector('#about')
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' })
-                }
+                window.location.href = '/about'
               }}
               className="inline-flex items-center space-x-2 text-red-500 hover:text-red-400 transition-colors duration-200 font-medium"
               whileHover={{ scale: 1.05 }}

@@ -1,0 +1,16 @@
+<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+  <!-- Detailed maple leaf with veins (based on user's second image) -->
+  <path d="M5,0.5 L6,2 L8,1.5 L7,3 L9,4 L7,5 L8,7 L6,6 L5,8 L4,6 L2,7 L3,5 L1,4 L3,3 L2,1.5 L4,2 Z" fill="#1a1a1a"/>
+  
+  <!-- Central vein -->
+  <line x1="5" y1="0.5" x2="5" y2="8" stroke="#0a0a0a" stroke-width="0.3"/>
+  
+  <!-- Secondary veins -->
+  <line x1="5" y1="2" x2="6" y2="2" stroke="#0a0a0a" stroke-width="0.2"/>
+  <line x1="5" y1="2" x2="4" y2="2" stroke="#0a0a0a" stroke-width="0.2"/>
+  <line x1="5" y1="4" x2="7" y2="3" stroke="#0a0a0a" stroke-width="0.2"/>
+  <line x1="5" y1="4" x2="3" y2="3" stroke="#0a0a0a" stroke-width="0.2"/>
+  <line x1="5" y1="6" x2="6" y2="6" stroke="#0a0a0a" stroke-width="0.2"/>
+  <line x1="5" y1="6" x2="4" y2="6" stroke="#0a0a0a" stroke-width="0.2"/>
+</svg>
+

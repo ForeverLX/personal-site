@@ -52,7 +52,7 @@ export default function ServicesSection() {
           and improve their security posture from an attacker's perspective.
         </motion.p>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           <motion.div
             className="p-8 bg-gray-800/30 rounded-lg border border-gray-700/50 backdrop-blur-sm hover:border-red-500/30 transition-all duration-300"
             initial={{ opacity: 0, y: 30 }}
@@ -71,12 +71,15 @@ export default function ServicesSection() {
               Comprehensive security assessments to identify vulnerabilities and 
               provide actionable remediation strategies.
             </p>
-            <ul className="space-y-2 text-gray-400 text-left">
+            <ul className="space-y-2 text-gray-400 text-left mb-6">
               <li>• Web Application Testing</li>
               <li>• Network Infrastructure Assessment</li>
               <li>• Social Engineering Campaigns</li>
               <li>• Physical Security Testing</li>
             </ul>
+            <div className="text-center">
+              <span className="text-red-400 font-bold text-lg">$2,000 - $6,000</span>
+            </div>
           </motion.div>
           
           <motion.div
@@ -97,12 +100,15 @@ export default function ServicesSection() {
               Advanced persistent threat simulation to test your organization's 
               detection and response capabilities.
             </p>
-            <ul className="space-y-2 text-gray-400 text-left">
+            <ul className="space-y-2 text-gray-400 text-left mb-6">
               <li>• Multi-Vector Attack Campaigns</li>
               <li>• Active Directory Compromise</li>
               <li>• Lateral Movement Testing</li>
               <li>• Data Exfiltration Simulation</li>
             </ul>
+            <div className="text-center">
+              <span className="text-red-400 font-bold text-lg">$5,000 - $15,000</span>
+            </div>
           </motion.div>
           
           <motion.div
@@ -123,14 +129,39 @@ export default function ServicesSection() {
               Strategic security guidance to help organizations build robust 
               security programs and incident response capabilities.
             </p>
-            <ul className="space-y-2 text-gray-400 text-left">
+            <ul className="space-y-2 text-gray-400 text-left mb-6">
               <li>• Security Program Development</li>
               <li>• Incident Response Planning</li>
               <li>• Security Architecture Review</li>
               <li>• Training & Awareness Programs</li>
             </ul>
+            <div className="text-center">
+              <span className="text-red-400 font-bold text-lg">Quote-based</span>
+            </div>
           </motion.div>
         </div>
+        
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            onClick={() => {
+              window.location.href = '/services'
+            }}
+            className="inline-flex items-center space-x-2 px-8 py-4 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span>View All Services</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,0 +1,105 @@
+.terminal-container {
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.terminal-header {
+  background: #0d0d0d;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.terminal-button.close {
+  background: #ff5f56;
+}
+
+.terminal-button.minimize {
+  background: #ffbd2e;
+}
+
+.terminal-button.maximize {
+  background: #27c93f;
+}
+
+.terminal-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  color: #a0a0a0;
+}
+
+.terminal-body {
+  background: #0a0a0a;
+  padding: 1rem;
+  height: 700px; /* Increased height for better display */
+  width: 100%; /* Ensure full width */
+  overflow: auto;
+}
+
+/* Custom scrollbar */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: #ff0040;
+  border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: #ff4d6d;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-cursor {
+  animation: blink 1s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terminal-container {
+    border-radius: 8px;
+    display: none; /* Hide on mobile for now */
+  }
+  
+  .terminal-body {
+    font-size: 12px;
+    padding: 0.75rem;
+    min-height: 300px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .terminal-container {
+    display: block;
+  }
+}
