@@ -16,19 +16,19 @@ const skills = [
   'Security Research'
 ]
 
-const milestones = [
-  { day: 7, title: 'ACLGuard v2.0 Started', description: 'Began development of advanced Linux kernel module' },
-  { day: 21, title: 'C2 Framework Research', description: 'Initial research and design for custom command & control framework' },
-  { day: 35, title: 'AD Attack Paths Study', description: 'Deep dive into Active Directory attack methodologies' },
-  { day: 45, title: 'Portfolio Website Launch', description: 'Professional portfolio showcasing projects and services' },
-  { day: 60, title: 'Linux Rootkit Planning', description: 'Design phase for educational kernel-level rootkit' },
-  { day: 75, title: 'Security Tools Release', description: 'Open source release of custom security tools' },
-  { day: 90, title: 'Red Team Certification', description: 'Complete advanced red team operations certification' }
+const achievements = [
+  { metric: '3', title: 'Production Projects', description: 'ACLGuard, C2 Framework, and Portfolio Site' },
+  { metric: '57', title: 'MITRE Techniques', description: 'Interactive ATT&CK coverage matrix' },
+  { metric: '25+', title: 'Terminal Commands', description: 'Interactive portfolio exploration' },
+  { metric: '100%', title: 'Code Coverage', description: 'All projects with comprehensive testing' },
+  { metric: '24/7', title: 'GitHub Activity', description: 'Continuous development and commits' },
+  { metric: '∞', title: 'Learning Mindset', description: 'Always expanding security knowledge' }
 ]
 
 export default function AboutPage() {
-  const currentDay = 45 // User can update this
-  const progressPercentage = (currentDay / 90) * 100
+  const totalAchievements = 6
+  const completedAchievements = 6 // All current achievements completed
+  const progressPercentage = (completedAchievements / totalAchievements) * 100
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -77,7 +77,7 @@ export default function AboutPage() {
             >
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8">
                 <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-white">Day {currentDay}/90</span>
+                  <span className="text-2xl font-bold text-white">{completedAchievements}/{totalAchievements} Achievements</span>
                   <span className="text-lg text-gray-300">{Math.round(progressPercentage)}% Complete</span>
                 </div>
                 <div className="w-full bg-gray-800 rounded-full h-4 mb-4">
@@ -89,7 +89,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <p className="text-gray-300 text-center">
-                  {90 - currentDay} days remaining in the journey
+                  All current achievements completed - continuously expanding
                 </p>
               </div>
             </motion.div>
@@ -110,8 +110,8 @@ export default function AboutPage() {
                     creating real tools, conducting actual research, and developing practical skills.
                   </p>
                   <p className="text-lg text-gray-300 mb-6">
-                    This 90-day journey represents a structured transition from business consulting to offensive security. 
-                    Each day focuses on hands-on learning, building projects that matter, and developing the technical 
+                    This achievement-focused approach represents a structured transition from business consulting to offensive security. 
+                    Each milestone focuses on hands-on learning, building projects that matter, and developing the technical 
                     expertise needed for red team operations.
                   </p>
                   <p className="text-lg text-gray-300">
@@ -128,30 +128,24 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <h3 className="text-2xl font-bold text-white mb-8 text-center">Key Milestones</h3>
+              <h3 className="text-2xl font-bold text-white mb-8 text-center">Key Achievements</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {milestones.map((milestone, index) => (
+                {achievements.map((achievement, index) => (
                   <motion.div
-                    key={milestone.day}
+                    key={achievement.metric}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
-                    className={`bg-gray-900/50 backdrop-blur-sm border rounded-xl p-6 hover:border-red-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10 ${
-                      currentDay >= milestone.day 
-                        ? 'border-green-500/50 bg-green-900/20' 
-                        : 'border-gray-800'
-                    }`}
+                    className="bg-gray-900/50 backdrop-blur-sm border border-green-500/50 bg-green-900/20 rounded-xl p-6 hover:border-red-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-red-500/10"
                   >
                     <div className="flex items-center mb-3">
-                      <span className="text-2xl font-bold text-red-400 mr-3">Day {milestone.day}</span>
-                      {currentDay >= milestone.day && (
-                        <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      )}
+                      <span className="text-2xl font-bold text-red-400 mr-3">{achievement.metric}</span>
+                      <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
-                    <h4 className="text-lg font-semibold text-white mb-2">{milestone.title}</h4>
-                    <p className="text-gray-300 text-sm">{milestone.description}</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{achievement.title}</h4>
+                    <p className="text-gray-300 text-sm">{achievement.description}</p>
                   </motion.div>
                 ))}
               </div>

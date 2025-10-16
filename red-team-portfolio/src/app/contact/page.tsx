@@ -70,8 +70,9 @@ export default function ContactPage() {
     setIsSubmitting(true)
     
     try {
-      // Note: User will need to replace with actual Formspree form ID
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      // Use environment variable for Formspree endpoint
+      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || 'mjkalgaj';
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

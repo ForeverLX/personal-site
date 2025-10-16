@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { GITHUB_CONFIG } from '@/lib/constants'
 
 interface GitHubUser {
   public_repos: number
@@ -115,9 +116,9 @@ export function useGitHubStats() {
       
       // Fetch user data, events, and repos in parallel
       const [userResponse, eventsResponse, reposResponse] = await Promise.all([
-        fetch('https://api.github.com/users/ForeverLX'),
-        fetch('https://api.github.com/users/ForeverLX/events?per_page=100'),
-        fetch('https://api.github.com/users/ForeverLX/repos?per_page=100')
+        fetch(`${GITHUB_CONFIG.API_BASE_URL}/users/${GITHUB_CONFIG.USERNAME}`),
+        fetch(`${GITHUB_CONFIG.API_BASE_URL}/users/${GITHUB_CONFIG.USERNAME}/events?per_page=100`),
+        fetch(`${GITHUB_CONFIG.API_BASE_URL}/users/${GITHUB_CONFIG.USERNAME}/repos?per_page=100`)
       ])
       
       if (!userResponse.ok || !eventsResponse.ok || !reposResponse.ok) {
@@ -155,7 +156,7 @@ export function useGitHubStats() {
     fetchGitHubData()
     
     // Set up auto-refresh every 5 minutes
-    const interval = setInterval(fetchGitHubData, 5 * 60 * 1000)
+    const interval = setInterval(fetchGitHubData, GITHUB_CONFIG.REFRESH_INTERVAL)
     
     return () => clearInterval(interval)
   }, [fetchGitHubData])

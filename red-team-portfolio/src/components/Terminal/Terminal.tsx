@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CommandParser } from './CommandParser';
 import { CommandRegistry } from './CommandRegistry';
 import { TourMode, TourCallbacks } from './TourMode';
+import { TERMINAL_CONFIG, TOUR_CONFIG } from '@/lib/constants';
 import styles from './Terminal.module.css';
 import '@xterm/xterm/css/xterm.css';
 
@@ -79,7 +80,7 @@ export function Terminal() {
           brightCyan: '#9333ea',       // SLIGHTLY LIGHTER PURPLE
           brightWhite: '#ffffff',      // Pure white
         },
-        cols: 100, // Explicit columns for proper text wrapping
+        cols: TERMINAL_CONFIG.WIDTH + 25, // Explicit columns for proper text wrapping
         rows: 35,  // Explicit rows for 700px height
       });
 
@@ -113,7 +114,7 @@ export function Terminal() {
             console.error('Error fitting terminal:', e);
           }
         }
-      }, 50);
+      }, TERMINAL_CONFIG.TYPEWRITER_DELAY);
 
       // Prompt function
       const prompt = () => {
@@ -237,7 +238,6 @@ export function Terminal() {
           if (currentLine.trim()) {
             // Handle tour mode input first
             if (isTourActiveRef.current && tourModeRef.current) {
-              console.log('Tour mode: handling command input:', currentLine.trim());
               tourModeRef.current.handleInput(currentLine.trim());
             } else {
               // Save command to history
@@ -249,13 +249,10 @@ export function Terminal() {
             }
           } else {
             // Handle empty input for tour mode
-            console.log('ENTER pressed - isTourActive:', isTourActiveRef.current, 'tourMode:', !!tourModeRef.current);
             if (isTourActiveRef.current && tourModeRef.current) {
-              console.log('Tour mode: handling empty ENTER input');
               tourModeRef.current.handleInput('');
               // Don't call prompt() - tour handles its own flow
             } else {
-              console.log('Not in tour mode, showing regular prompt');
               prompt();
             }
           }
@@ -328,7 +325,13 @@ export function Terminal() {
       <div 
         ref={terminalRef} 
         className={styles.terminalBody}
+        role="application"
+        aria-label="Interactive terminal interface"
+        aria-describedby="terminal-description"
       />
+      <div id="terminal-description" className="sr-only">
+        Interactive terminal with commands to explore the portfolio. Type 'help' to see available commands, 'tour' for a guided walkthrough, or 'whoami' to learn about the developer.
+      </div>
     </div>
   );
 }

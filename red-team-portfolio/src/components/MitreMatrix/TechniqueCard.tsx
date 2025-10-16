@@ -36,6 +36,10 @@ export function TechniqueCard({ technique, onClose }: TechniqueCardProps) {
       exit={{ opacity: 0 }}
       className="fixed inset-0 bg-black/95 backdrop-blur-lg z-[1000] flex items-center justify-center p-4"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="technique-title"
+      aria-describedby="technique-description"
     >
       <motion.div
         initial={{ scale: 0.9, y: 20 }}
@@ -50,7 +54,7 @@ export function TechniqueCard({ technique, onClose }: TechniqueCardProps) {
             <div className="font-mono text-sm text-red-400 mb-2">
               {technique.id}
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">
+            <h3 id="technique-title" className="text-2xl font-bold text-white mb-2">
               {technique.name}
             </h3>
             <div className="text-gray-400 text-sm">
@@ -60,6 +64,7 @@ export function TechniqueCard({ technique, onClose }: TechniqueCardProps) {
           <button
             onClick={onClose}
             className="text-red-400 hover:text-red-300 text-2xl font-bold p-2 transition-colors"
+            aria-label="Close technique details"
           >
             ✕
           </button>
@@ -73,7 +78,7 @@ export function TechniqueCard({ technique, onClose }: TechniqueCardProps) {
             transition={{ delay: 0.1 }}
           >
             <h4 className="text-lg font-semibold text-white mb-3">Description</h4>
-            <p className="text-gray-300 leading-relaxed mb-4">
+            <p id="technique-description" className="text-gray-300 leading-relaxed mb-4">
               {technique.description}
             </p>
             <a

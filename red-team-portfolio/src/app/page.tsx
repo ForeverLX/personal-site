@@ -9,6 +9,7 @@ import FeaturedProjectSpotlight from '@/components/FeaturedProjectSpotlight'
 import AttackChainVisualizer from '@/components/AttackChainVisualizer'
 import LiveGitHubStats from '@/components/LiveGitHubStats'
 import Terminal from '@/components/Terminal/ClientTerminal'
+import { TerminalErrorBoundary } from '@/components/Terminal/TerminalErrorBoundary'
 import CallToAction from '@/components/CallToAction'
 import AboutSection from '@/components/AboutSection'
 import ResearchSection from '@/components/ResearchSection'
@@ -67,7 +68,9 @@ export default function Home() {
                 </div>
               </div>
               
-              <Terminal />
+              <TerminalErrorBoundary>
+                <Terminal />
+              </TerminalErrorBoundary>
               <p className="text-center text-gray-400 mt-4 text-sm">
                 <span className="text-red-400">Hint:</span> Type <code className="bg-gray-800 px-2 py-1 rounded text-red-400">help</code> to see available commands
               </p>

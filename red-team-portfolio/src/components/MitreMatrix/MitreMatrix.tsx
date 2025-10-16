@@ -35,7 +35,7 @@ export function MitreMatrix() {
     : mitreCoverage.filter(t => t.coverage === filterCoverage)
 
   return (
-    <section className="py-16">
+    <section className="py-16" aria-label="MITRE ATT&CK coverage matrix">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-12">

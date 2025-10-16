@@ -32,8 +32,9 @@ export default function AboutPreview() {
           
           <div className="max-w-4xl mx-auto">
             <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              I'm on a <span className="text-red-500 font-semibold">90-day journey</span> from 
-              professional consulting to red team operations. This isn't just a career change—it's 
+              I've built <span className="text-red-500 font-semibold">3 production-ready projects</span> and 
+              covered <span className="text-red-500 font-semibold">57 MITRE ATT&CK techniques</span> in my 
+              transition from professional consulting to red team operations. This isn't just a career change—it's 
               a complete transformation of how I approach security.
             </p>
             

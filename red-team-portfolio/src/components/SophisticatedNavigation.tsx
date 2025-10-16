@@ -77,7 +77,7 @@ export default function SophisticatedNavigation() {
               onClick={() => handleNavClick({ name: 'Home', href: '/', section: '#home' })}
               className="hover:opacity-80 transition-opacity"
             >
-              <TwoTreesLogo />
+              <TwoTreesLogo size="navigation" variant="transparent" />
             </button>
           </motion.div>
 

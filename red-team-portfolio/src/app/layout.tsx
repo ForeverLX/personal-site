@@ -22,29 +22,58 @@ const parisienne = Parisienne({
 })
 
 export const metadata: Metadata = {
-  title: 'Darrius Grate | Red Team Operator & Security Researcher',
-  description: 'Professional consultant transitioning to red team operations. Specializing in Active Directory security, C programming, and offensive security research.',
-  keywords: ['red team', 'penetration testing', 'active directory', 'cybersecurity', 'security research', 'C programming'],
-  authors: [{ name: 'Darrius Grate' }],
+  title: {
+    default: 'Darrius Grate | Red Team Operator & Security Researcher',
+    template: '%s | Darrius Grate'
+  },
+  description: 'Professional red team operator and security researcher. 3 production-ready projects, 57 MITRE ATT&CK techniques covered, interactive terminal portfolio. Specializing in Active Directory security, C programming, and offensive security research.',
+  keywords: [
+    'red team', 'penetration testing', 'active directory', 'cybersecurity', 'security research', 
+    'C programming', 'MITRE ATT&CK', 'offensive security', 'ACLGuard', 'C2 framework',
+    'Linux rootkit', 'kerberoasting', 'golden ticket', 'DCSync', 'security consultant'
+  ],
+  authors: [{ name: 'Darrius Grate', url: 'https://darriusgrate.com' }],
   creator: 'Darrius Grate',
   publisher: 'Darrius Grate',
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://darriusgrate.com',
     title: 'Darrius Grate | Red Team Operator & Security Researcher',
-    description: 'Professional consultant transitioning to red team operations. Specializing in Active Directory security, C programming, and offensive security research.',
+    description: 'Professional red team operator with 3 production projects and 57 MITRE ATT&CK techniques. Interactive terminal portfolio showcasing offensive security expertise.',
     siteName: 'Darrius Grate Portfolio',
+    images: [
+      {
+        url: '/screenshots/homepage.png',
+        width: 1200,
+        height: 630,
+        alt: 'Darrius Grate Red Team Portfolio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Darrius Grate | Red Team Operator & Security Researcher',
-    description: 'Professional consultant transitioning to red team operations. Specializing in Active Directory security, C programming, and offensive security research.',
-    creator: '@foreverlx',
+    description: 'Professional red team operator with 3 production projects and 57 MITRE ATT&CK techniques. Interactive terminal portfolio showcasing offensive security expertise.',
+    creator: '@DarriusGrate',
+    images: ['/screenshots/homepage.png'],
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add when you have it
+  },
+  alternates: {
+    canonical: 'https://darriusgrate.com',
   },
 }
 

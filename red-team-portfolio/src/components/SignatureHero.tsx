@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 import VideoSunriseSunset from './VideoSunriseSunset'
+import TwoTreesLogo from './TwoTreesLogo'
 
 export default function SignatureHero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -231,11 +232,22 @@ export default function SignatureHero() {
 
       {/* Main content */}
       <div className="relative z-30 max-w-7xl mx-auto px-6 text-center">
-        {/* Dual Identity Typography */}
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-8 flex justify-center"
+          style={{ y, opacity }}
+        >
+          <TwoTreesLogo size="hero" variant="gradient" />
+        </motion.div>
+
+        {/* Dual Identity Typography */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
           className="mb-16"
           style={{ y, opacity }}
         >

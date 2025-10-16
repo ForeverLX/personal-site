@@ -1,7 +1,8 @@
 import { typewriterEffect } from './utils/typewriter';
+import { TOUR_CONFIG, TERMINAL_CONFIG } from '@/lib/constants';
 
 // Utility to wrap text at terminal width with proper word boundaries and ANSI support
-function wrapText(text: string, maxWidth: number = 75): string[] {
+function wrapText(text: string, maxWidth: number = TERMINAL_CONFIG.WIDTH): string[] {
   const lines: string[] = [];
   const paragraphs = text.split('\n');
   
@@ -144,24 +145,18 @@ export class TourMode {
       if (this.isActive) {
         this.executeStep();
       }
-    }, 500); // 500ms delay
+    }, TOUR_CONFIG.STEP_DELAY); // Step delay
   }
 
   public handleInput(input: string): void {
-    console.log('TourMode.handleInput called - isActive:', this.isActive, 'input:', input, 'currentStep:', this.currentStep);
-    
     if (!this.isActive) {
-      console.log('Tour not active, returning');
       return;
     }
 
     const step = this.steps[this.currentStep];
     if (!step) {
-      console.log('No step found at index:', this.currentStep);
       return;
     }
-
-    console.log('Current step type:', step.type);
 
     // Handle skip command at any time
     if (input.toLowerCase().trim() === 'skip') {
@@ -173,11 +168,9 @@ export class TourMode {
       case 'narrative':
         // Accept empty input (ENTER) or explicit 'enter' to continue
         if (input.trim() === '' || input.toLowerCase().trim() === 'enter') {
-          console.log('Narrative: advancing to next step');
           this.nextStep();
         } else {
           // Show hint for other inputs
-          console.log('Narrative: invalid input, showing hint');
           this.callbacks.write(`\nPress ENTER to continue or type 'skip' to exit.\n`);
           this.callbacks.renderPrompt(this);
         }
@@ -269,7 +262,7 @@ export class TourMode {
           wrappedLines[lineIndex],
           (char) => this.callbacks.write(char),
           { 
-            speed: 50,
+            speed: TOUR_CONFIG.TYPEWRITER_SPEED,
             onComplete: () => {
               this.callbacks.write('\r\n');
               lineIndex++;
@@ -324,7 +317,7 @@ export class TourMode {
             wrappedLines[lineIndex],
             (char) => this.callbacks.write(char),
             { 
-              speed: 50,
+              speed: TOUR_CONFIG.TYPEWRITER_SPEED,
               onComplete: () => {
                 this.callbacks.write('\r\n');
                 lineIndex++;
@@ -361,7 +354,7 @@ export class TourMode {
             wrappedLines[lineIndex],
             (char) => this.callbacks.write(char),
             { 
-              speed: 50,
+              speed: TOUR_CONFIG.TYPEWRITER_SPEED,
               onComplete: () => {
                 this.callbacks.write('\r\n');
                 lineIndex++;
@@ -390,14 +383,13 @@ export class TourMode {
 
   private nextStep(): void {
     this.currentStep++;
-    console.log('nextStep: advancing to step', this.currentStep);
     
     if (this.currentStep < this.steps.length) {
       setTimeout(() => {
         if (this.isActive) {
           this.executeStep();
         }
-      }, 500); // Small delay between steps
+      }, TOUR_CONFIG.STEP_DELAY); // Small delay between steps
     } else {
       this.complete();
     }

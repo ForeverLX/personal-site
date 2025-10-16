@@ -77,9 +77,9 @@ export default function AboutSection() {
                   strategic thinking and business understanding to cybersecurity challenges.
                 </p>
                 <p>
-                  Currently in the midst of an intensive 90-day red team journey, I'm rapidly building 
+                  With 3 production-ready projects and 57 MITRE ATT&CK techniques covered, I'm rapidly building 
                   expertise in Active Directory security, C programming, and offensive security research. 
-                  This accelerated learning path is designed to bridge the gap between business strategy 
+                  This hands-on approach is designed to bridge the gap between business strategy 
                   and technical execution.
                 </p>
                 <p>

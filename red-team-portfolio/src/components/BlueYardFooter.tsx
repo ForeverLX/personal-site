@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import TwoTreesLogo from './TwoTreesLogo'
 // Removed Link import - using smooth scroll buttons instead
 
 export default function BlueYardFooter() {
@@ -56,9 +57,7 @@ export default function BlueYardFooter() {
             variants={itemVariants}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">DG</span>
-              </div>
+              <TwoTreesLogo size="navigation" variant="transparent" className="scale-75" />
               <span className="text-gray-900 font-medium text-lg">
                 Red Team Portfolio
               </span>
