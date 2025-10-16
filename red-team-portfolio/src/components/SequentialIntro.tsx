@@ -37,6 +37,24 @@ export default function SequentialIntro({ onComplete }: SequentialIntroProps) {
   // Set mounted state for client-only rendering
   useEffect(() => {
     setIsMounted(true)
+    
+    // Check if user has already seen intro recently (within last 5 minutes)
+    const lastSeen = localStorage.getItem('introLastSeen')
+    const now = Date.now()
+    if (lastSeen && (now - parseInt(lastSeen)) < 300000) { // 5 minutes
+      console.log('🔄 Intro seen recently, skipping to main content')
+      setTimeout(() => onCompleteRef.current(), 1000)
+    }
+  }, [])
+
+  // Safety timeout - if intro doesn't complete within 20 seconds, force complete
+  useEffect(() => {
+    const safetyTimeout = setTimeout(() => {
+      console.log('🚨 Safety timeout reached, forcing intro completion')
+      onCompleteRef.current()
+    }, 20000)
+
+    return () => clearTimeout(safetyTimeout)
   }, [])
 
   // Performance monitoring
@@ -149,6 +167,17 @@ export default function SequentialIntro({ onComplete }: SequentialIntroProps) {
   const handleVideoError = (video: 'sunrise' | 'sunset') => {
     console.error(`❌ Video error for ${video}:`, video)
     setVideoErrors(prev => ({ ...prev, [video]: true }))
+    
+    // If both videos fail, skip to complete after a short delay
+    setTimeout(() => {
+      setVideoErrors(prev => {
+        if (prev.sunrise && prev.sunset) {
+          console.log('🚨 Both videos failed, skipping to complete')
+          setTimeout(() => onCompleteRef.current(), 1000)
+        }
+        return prev
+      })
+    }, 2000)
   }
 
   const handleSkip = () => {

@@ -28,6 +28,7 @@ export default function Home() {
 
   const handleIntroComplete = useCallback(() => {
     sessionStorage.setItem('hasSeenIntro', 'true')
+    localStorage.setItem('introLastSeen', Date.now().toString())
     setShowMainContent(true)
   }, [])
 
