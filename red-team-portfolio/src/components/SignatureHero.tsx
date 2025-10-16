@@ -238,7 +238,6 @@ export default function SignatureHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-6xl lg:text-8xl font-bold mb-4"
-          style={{ y, opacity }}
         >
           Darrius Grate
         </motion.h1>
@@ -249,7 +248,6 @@ export default function SignatureHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           className="mb-4 flex justify-center"
-          style={{ y, opacity }}
         >
           <TwoTreesLogo size="hero" variant="transparent" />
         </motion.div>
@@ -260,7 +258,6 @@ export default function SignatureHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           className="mb-8"
-          style={{ y, opacity }}
         >
           <div className="text-2xl lg:text-3xl font-mono text-gray-400 tracking-wider">
             FOREVERLX
