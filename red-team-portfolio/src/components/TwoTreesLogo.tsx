@@ -16,7 +16,7 @@ export default function TwoTreesLogo({
   
   // Size configurations
   const sizeConfig = {
-    hero: { width: 600, height: 200, textSize: 'text-2xl' },
+    hero: { width: 400, height: 120, textSize: 'text-lg' },
     navigation: { width: 150, height: 50, textSize: 'text-sm' },
     favicon: { width: 32, height: 32, textSize: 'text-xs' }
   }
@@ -40,101 +40,91 @@ export default function TwoTreesLogo({
       transition={{ duration: 0.5 }}
     >
       {/* Trees Container */}
-      <div className="flex items-end justify-center space-x-2 mb-2">
-        {/* Red Team Tree (Left) */}
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+      <div className="flex items-end justify-center space-x-1 mb-2">
+        <svg 
+          width={size === 'hero' ? 200 : size === 'navigation' ? 60 : 20} 
+          height={size === 'hero' ? 80 : size === 'navigation' ? 24 : 12}
+          viewBox="0 0 200 80"
+          className="drop-shadow-lg"
         >
-          <svg 
-            width={size === 'hero' ? 80 : size === 'navigation' ? 20 : 12} 
-            height={size === 'hero' ? 100 : size === 'navigation' ? 25 : 15}
-            viewBox="0 0 80 100"
-            className="drop-shadow-lg"
-          >
-            {/* Tree trunk */}
-            <rect x="35" y="60" width="10" height="40" fill="#4A1A1A" />
-            
-            {/* Tree foliage - Red Team gradient */}
-            <defs>
-              <linearGradient id="redTeamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8B0000" />
-                <stop offset="50%" stopColor="#DC143C" />
-                <stop offset="100%" stopColor="#FF0000" />
-              </linearGradient>
-            </defs>
-            
-            {/* Main foliage layers */}
-            <ellipse cx="40" cy="45" rx="25" ry="35" fill="url(#redTeamGradient)" />
-            <ellipse cx="40" cy="35" rx="20" ry="25" fill="url(#redTeamGradient)" />
-            <ellipse cx="40" cy="25" rx="15" ry="20" fill="url(#redTeamGradient)" />
-            
-            {/* Branch details */}
-            <path d="M25 50 Q40 45 55 50" stroke="#8B0000" strokeWidth="2" fill="none" />
-            <path d="M30 40 Q40 35 50 40" stroke="#8B0000" strokeWidth="1.5" fill="none" />
-            <path d="M35 30 Q40 25 45 30" stroke="#8B0000" strokeWidth="1" fill="none" />
-          </svg>
-        </motion.div>
+          <defs>
+            {/* Text gradient: red → purple → blue */}
+            <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#dc2626" />
+              <stop offset="50%" stopColor="#9333ea" />
+              <stop offset="100%" stopColor="#2563eb" />
+            </linearGradient>
+          </defs>
 
-        {/* Purple Team Glow (Center overlap) */}
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.3, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="w-8 h-8 bg-purple-500 rounded-full blur-sm opacity-30" />
-        </motion.div>
+          {/* Left Tree - Bare Winter Branches */}
+          <g>
+            {/* Main trunk */}
+            <rect x="85" y="50" width="6" height="30" fill="#000000" />
+            
+            {/* Left tree branches - leaning right */}
+            <path d="M85 50 L75 40 L70 35 L65 30 L60 25" stroke="#000000" strokeWidth="2" fill="none" strokeLinecap="round" />
+            <path d="M85 45 L80 35 L75 30 L70 25 L65 20" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+            <path d="M85 40 L82 30 L78 25 L74 20 L70 15" stroke="#000000" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+            <path d="M85 35 L83 25 L80 20 L77 15 L74 10" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
+            
+            {/* Secondary branches */}
+            <path d="M75 40 L70 35 L65 30" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
+            <path d="M80 35 L75 30 L70 25" stroke="#000000" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+            <path d="M82 30 L78 25 L74 20" stroke="#000000" strokeWidth="0.6" fill="none" strokeLinecap="round" />
+          </g>
 
-        {/* Blue Team Tree (Right) */}
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <svg 
-            width={size === 'hero' ? 80 : size === 'navigation' ? 20 : 12} 
-            height={size === 'hero' ? 100 : size === 'navigation' ? 25 : 15}
-            viewBox="0 0 80 100"
-            className="drop-shadow-lg"
-          >
-            {/* Tree trunk */}
-            <rect x="35" y="60" width="10" height="40" fill="#1A1A4A" />
+          {/* Right Tree - Bare Winter Branches */}
+          <g>
+            {/* Main trunk */}
+            <rect x="109" y="50" width="6" height="30" fill="#000000" />
             
-            {/* Tree foliage - Blue Team gradient */}
-            <defs>
-              <linearGradient id="blueTeamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#000080" />
-                <stop offset="50%" stopColor="#003399" />
-                <stop offset="100%" stopColor="#0066CC" />
-              </linearGradient>
-            </defs>
+            {/* Right tree branches - leaning left */}
+            <path d="M115 50 L125 40 L130 35 L135 30 L140 25" stroke="#000000" strokeWidth="2" fill="none" strokeLinecap="round" />
+            <path d="M115 45 L120 35 L125 30 L130 25 L135 20" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+            <path d="M115 40 L118 30 L122 25 L126 20 L130 15" stroke="#000000" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+            <path d="M115 35 L117 25 L120 20 L123 15 L126 10" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
             
-            {/* Main foliage layers */}
-            <ellipse cx="40" cy="45" rx="25" ry="35" fill="url(#blueTeamGradient)" />
-            <ellipse cx="40" cy="35" rx="20" ry="25" fill="url(#blueTeamGradient)" />
-            <ellipse cx="40" cy="25" rx="15" ry="20" fill="url(#blueTeamGradient)" />
+            {/* Secondary branches */}
+            <path d="M125 40 L130 35 L135 30" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
+            <path d="M120 35 L125 30 L130 25" stroke="#000000" strokeWidth="0.8" fill="none" strokeLinecap="round" />
+            <path d="M118 30 L122 25 L126 20" stroke="#000000" strokeWidth="0.6" fill="none" strokeLinecap="round" />
+          </g>
+
+          {/* Interlocking branches at the top - where trees connect */}
+          <g>
+            {/* Connection point - branches intertwine */}
+            <path d="M70 15 Q100 5 130 15" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+            <path d="M74 10 Q100 0 126 10" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
+            <path d="M78 5 Q100 -5 122 5" stroke="#000000" strokeWidth="0.8" fill="none" strokeLinecap="round" />
             
-            {/* Branch details */}
-            <path d="M25 50 Q40 45 55 50" stroke="#000080" strokeWidth="2" fill="none" />
-            <path d="M30 40 Q40 35 50 40" stroke="#000080" strokeWidth="1.5" fill="none" />
-            <path d="M35 30 Q40 25 45 30" stroke="#000080" strokeWidth="1" fill="none" />
-          </svg>
-        </motion.div>
+            {/* Small connecting branches */}
+            <path d="M85 25 Q100 20 115 25" stroke="#000000" strokeWidth="0.6" fill="none" strokeLinecap="round" />
+            <path d="M87 20 Q100 15 113 20" stroke="#000000" strokeWidth="0.4" fill="none" strokeLinecap="round" />
+          </g>
+        </svg>
       </div>
 
-      {/* Text */}
+      {/* Text with gradient */}
       {showText && (
         <motion.div
-          className={`text-white font-serif ${config.textSize} font-medium tracking-wide`}
+          className={`font-serif ${config.textSize} font-medium tracking-wide`}
+          style={{ fill: 'url(#textGradient)' }}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          Keep Moving Forward
+          <svg width={size === 'hero' ? 300 : size === 'navigation' ? 120 : 30} height={size === 'hero' ? 30 : size === 'navigation' ? 15 : 8} viewBox="0 0 300 30">
+            <defs>
+              <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#dc2626" />
+                <stop offset="50%" stopColor="#9333ea" />
+                <stop offset="100%" stopColor="#2563eb" />
+              </linearGradient>
+            </defs>
+            <text x="150" y="20" textAnchor="middle" fill="url(#textGradient)" fontSize="16" fontFamily="serif" fontWeight="500">
+              Keep Moving Forward
+            </text>
+          </svg>
         </motion.div>
       )}
     </motion.div>
