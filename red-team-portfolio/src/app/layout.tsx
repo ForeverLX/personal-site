@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Cinzel, Playfair_Display, Parisienne } from 'next/font/google'
 import './globals.css'
 import SimpleLayout from '@/components/SimpleLayout'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const cinzel = Cinzel({ 
   subsets: ['latin'],
@@ -90,6 +91,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`antialiased ${cinzel.variable} ${playfair.variable} ${parisienne.variable}`}>
+        <GoogleAnalytics />
         <SimpleLayout>
           {children}
         </SimpleLayout>
