@@ -16,8 +16,8 @@ export default function TwoTreesLogo({
   
   // Size configurations
   const sizeConfig = {
-    hero: { width: 400, height: 120, textSize: 'text-lg' },
-    navigation: { width: 150, height: 50, textSize: 'text-sm' },
+    hero: { width: 600, height: 80, textSize: 'text-4xl' },
+    navigation: { width: 200, height: 40, textSize: 'text-lg' },
     favicon: { width: 32, height: 32, textSize: 'text-xs' }
   }
 
@@ -39,89 +39,76 @@ export default function TwoTreesLogo({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Trees Container */}
-      <div className="flex items-end justify-center space-x-1 mb-2">
-        <svg 
-          width={size === 'hero' ? 200 : size === 'navigation' ? 60 : 20} 
-          height={size === 'hero' ? 80 : size === 'navigation' ? 24 : 12}
-          viewBox="0 0 200 80"
-          className="drop-shadow-lg"
-        >
-          <defs>
-            {/* Text gradient: red → purple → blue */}
-            <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#dc2626" />
-              <stop offset="50%" stopColor="#9333ea" />
-              <stop offset="100%" stopColor="#2563eb" />
-            </linearGradient>
-          </defs>
-
-          {/* Left Tree - Bare Winter Branches */}
-          <g>
-            {/* Main trunk */}
-            <rect x="85" y="50" width="6" height="30" fill="#000000" />
-            
-            {/* Left tree branches - leaning right */}
-            <path d="M85 50 L75 40 L70 35 L65 30 L60 25" stroke="#000000" strokeWidth="2" fill="none" strokeLinecap="round" />
-            <path d="M85 45 L80 35 L75 30 L70 25 L65 20" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-            <path d="M85 40 L82 30 L78 25 L74 20 L70 15" stroke="#000000" strokeWidth="1.2" fill="none" strokeLinecap="round" />
-            <path d="M85 35 L83 25 L80 20 L77 15 L74 10" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
-            
-            {/* Secondary branches */}
-            <path d="M75 40 L70 35 L65 30" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
-            <path d="M80 35 L75 30 L70 25" stroke="#000000" strokeWidth="0.8" fill="none" strokeLinecap="round" />
-            <path d="M82 30 L78 25 L74 20" stroke="#000000" strokeWidth="0.6" fill="none" strokeLinecap="round" />
-          </g>
-
-          {/* Right Tree - Bare Winter Branches */}
-          <g>
-            {/* Main trunk */}
-            <rect x="109" y="50" width="6" height="30" fill="#000000" />
-            
-            {/* Right tree branches - leaning left */}
-            <path d="M115 50 L125 40 L130 35 L135 30 L140 25" stroke="#000000" strokeWidth="2" fill="none" strokeLinecap="round" />
-            <path d="M115 45 L120 35 L125 30 L130 25 L135 20" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-            <path d="M115 40 L118 30 L122 25 L126 20 L130 15" stroke="#000000" strokeWidth="1.2" fill="none" strokeLinecap="round" />
-            <path d="M115 35 L117 25 L120 20 L123 15 L126 10" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
-            
-            {/* Secondary branches */}
-            <path d="M125 40 L130 35 L135 30" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
-            <path d="M120 35 L125 30 L130 25" stroke="#000000" strokeWidth="0.8" fill="none" strokeLinecap="round" />
-            <path d="M118 30 L122 25 L126 20" stroke="#000000" strokeWidth="0.6" fill="none" strokeLinecap="round" />
-          </g>
-
-          {/* Interlocking branches at the top - where trees connect */}
-          <g>
-            {/* Connection point - branches intertwine */}
-            <path d="M70 15 Q100 5 130 15" stroke="#000000" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-            <path d="M74 10 Q100 0 126 10" stroke="#000000" strokeWidth="1" fill="none" strokeLinecap="round" />
-            <path d="M78 5 Q100 -5 122 5" stroke="#000000" strokeWidth="0.8" fill="none" strokeLinecap="round" />
-            
-            {/* Small connecting branches */}
-            <path d="M85 25 Q100 20 115 25" stroke="#000000" strokeWidth="0.6" fill="none" strokeLinecap="round" />
-            <path d="M87 20 Q100 15 113 20" stroke="#000000" strokeWidth="0.4" fill="none" strokeLinecap="round" />
-          </g>
-        </svg>
-      </div>
-
-      {/* Text with gradient */}
+      {/* Enhanced "Keep Moving Forward" Text */}
       {showText && (
         <motion.div
-          className={`font-serif ${config.textSize} font-medium tracking-wide`}
-          style={{ fill: 'url(#textGradient)' }}
+          className="relative"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <svg width={size === 'hero' ? 300 : size === 'navigation' ? 120 : 30} height={size === 'hero' ? 30 : size === 'navigation' ? 15 : 8} viewBox="0 0 300 30">
+          <svg 
+            width={size === 'hero' ? 600 : size === 'navigation' ? 200 : 30} 
+            height={size === 'hero' ? 80 : size === 'navigation' ? 40 : 8} 
+            viewBox="0 0 600 80"
+            className="drop-shadow-2xl"
+          >
             <defs>
-              <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#dc2626" />
-                <stop offset="50%" stopColor="#9333ea" />
-                <stop offset="100%" stopColor="#2563eb" />
+              {/* Enhanced gradient with more color stops for richer effect */}
+              <linearGradient id="enhancedTextGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ff0000" />
+                <stop offset="15%" stopColor="#ff4500" />
+                <stop offset="30%" stopColor="#ff6b35" />
+                <stop offset="45%" stopColor="#dc2626" />
+                <stop offset="60%" stopColor="#9333ea" />
+                <stop offset="75%" stopColor="#7c3aed" />
+                <stop offset="90%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#1d4ed8" />
               </linearGradient>
+              
+              {/* Glow effect */}
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              
+              {/* Shadow effect */}
+              <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="2" dy="2" stdDeviation="4" floodColor="#000000" floodOpacity="0.3"/>
+              </filter>
             </defs>
-            <text x="150" y="20" textAnchor="middle" fill="url(#textGradient)" fontSize="16" fontFamily="serif" fontWeight="500">
+            
+            {/* Main text with enhanced gradient */}
+            <text 
+              x="300" 
+              y={size === 'hero' ? 50 : size === 'navigation' ? 25 : 6} 
+              textAnchor="middle" 
+              fill="url(#enhancedTextGradient)" 
+              fontSize={size === 'hero' ? 36 : size === 'navigation' ? 18 : 8} 
+              fontFamily="serif" 
+              fontWeight="600"
+              filter="url(#shadow)"
+              className="select-none"
+            >
+              Keep Moving Forward
+            </text>
+            
+            {/* Subtle glow layer */}
+            <text 
+              x="300" 
+              y={size === 'hero' ? 50 : size === 'navigation' ? 25 : 6} 
+              textAnchor="middle" 
+              fill="url(#enhancedTextGradient)" 
+              fontSize={size === 'hero' ? 36 : size === 'navigation' ? 18 : 8} 
+              fontFamily="serif" 
+              fontWeight="600"
+              filter="url(#glow)"
+              opacity="0.3"
+              className="select-none"
+            >
               Keep Moving Forward
             </text>
           </svg>

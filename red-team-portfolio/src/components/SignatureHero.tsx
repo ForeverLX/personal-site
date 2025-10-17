@@ -232,36 +232,14 @@ export default function SignatureHero() {
 
       {/* Main content */}
       <div className="relative z-30 max-w-7xl mx-auto px-6 text-center">
-        {/* Name */}
-        <motion.h1
+        {/* Logo - Centered and prominent */}
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-6xl lg:text-8xl font-bold mb-4"
-        >
-          Darrius Grate
-        </motion.h1>
-
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="mb-4 flex justify-center"
+          className="mb-8 flex justify-center"
         >
           <TwoTreesLogo size="hero" variant="transparent" />
-        </motion.div>
-
-        {/* Username */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-          className="mb-8"
-        >
-          <div className="text-2xl lg:text-3xl font-mono text-gray-400 tracking-wider">
-            FOREVERLX
-          </div>
         </motion.div>
 
         {/* Dual Identity Typography */}
