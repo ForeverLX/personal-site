@@ -17,7 +17,7 @@ export default function TwoTreesLogo({
   // Size configurations
   const sizeConfig = {
     hero: { width: 600, height: 80, textSize: 'text-4xl' },
-    navigation: { width: 200, height: 40, textSize: 'text-lg' },
+    navigation: { width: 350, height: 60, textSize: 'text-2xl' },
     favicon: { width: 32, height: 32, textSize: 'text-xs' }
   }
 
@@ -48,8 +48,8 @@ export default function TwoTreesLogo({
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <svg 
-            width={size === 'hero' ? 600 : size === 'navigation' ? 200 : 30} 
-            height={size === 'hero' ? 80 : size === 'navigation' ? 40 : 8} 
+            width={size === 'hero' ? 600 : size === 'navigation' ? 350 : 30} 
+            height={size === 'hero' ? 80 : size === 'navigation' ? 60 : 8} 
             viewBox="0 0 600 80"
             className="drop-shadow-2xl"
           >
@@ -84,10 +84,10 @@ export default function TwoTreesLogo({
             {/* Main text with enhanced gradient */}
             <text 
               x="300" 
-              y={size === 'hero' ? 50 : size === 'navigation' ? 25 : 6} 
+              y={size === 'hero' ? 50 : size === 'navigation' ? 40 : 6} 
               textAnchor="middle" 
               fill="url(#enhancedTextGradient)" 
-              fontSize={size === 'hero' ? 36 : size === 'navigation' ? 18 : 8} 
+              fontSize={size === 'hero' ? 36 : size === 'navigation' ? 28 : 8} 
               fontFamily="serif" 
               fontWeight="600"
               filter="url(#shadow)"
@@ -99,10 +99,10 @@ export default function TwoTreesLogo({
             {/* Subtle glow layer */}
             <text 
               x="300" 
-              y={size === 'hero' ? 50 : size === 'navigation' ? 25 : 6} 
+              y={size === 'hero' ? 50 : size === 'navigation' ? 40 : 6} 
               textAnchor="middle" 
               fill="url(#enhancedTextGradient)" 
-              fontSize={size === 'hero' ? 36 : size === 'navigation' ? 18 : 8} 
+              fontSize={size === 'hero' ? 36 : size === 'navigation' ? 28 : 8} 
               fontFamily="serif" 
               fontWeight="600"
               filter="url(#glow)"
