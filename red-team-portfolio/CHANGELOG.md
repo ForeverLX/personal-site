@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Portfolio feature explanations
 
 - **MITRE ATT&CK Matrix**
-  - Interactive visualization of 57 mapped techniques
+  - Interactive visualization of 10 mapped techniques with 70% automation
   - Color-coded proficiency levels (Full, Partial, None)
   - Detailed technique cards with descriptions
   - Filter options by coverage level

@@ -18,7 +18,7 @@ const skills = [
 
 const achievements = [
   { metric: '3', title: 'Production Projects', description: 'ACLGuard, C2 Framework, and Portfolio Site' },
-  { metric: '57', title: 'MITRE Techniques', description: 'Interactive ATT&CK coverage matrix' },
+  { metric: '10', title: 'MITRE Techniques', description: 'Interactive ATT&CK coverage matrix (70% automation)' },
   { metric: '25+', title: 'Terminal Commands', description: 'Interactive portfolio exploration' },
   { metric: '100%', title: 'Code Coverage', description: 'All projects with comprehensive testing' },
   { metric: '24/7', title: 'GitHub Activity', description: 'Continuous development and commits' },

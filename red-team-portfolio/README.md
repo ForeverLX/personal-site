@@ -45,7 +45,7 @@
 - **Tab Completion**: Smart command suggestions
 
 ### 🎯 MITRE ATT&CK Matrix
-- **57 Techniques Covered**: Interactive coverage visualization
+- **10 MITRE ATT&CK Techniques**: Interactive coverage visualization with 70% automation rate
 - **Real-time Stats**: Coverage percentages and technique counts
 - **Detailed Cards**: Click any technique for full details
 - **Filter Options**: View by coverage level (Full, Partial, None)

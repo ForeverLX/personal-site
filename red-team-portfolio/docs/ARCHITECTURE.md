@@ -165,7 +165,7 @@ MitreMatrix/
 ├── MitreMatrix.tsx      # Main grid component
 ├── TechniqueCard.tsx    # Individual technique display
 └── data/
-    └── coverageData.ts  # 57 techniques mapped
+    └── coverageData.ts  # 10 techniques mapped with 70% automation
 ```
 
 **Architecture**:

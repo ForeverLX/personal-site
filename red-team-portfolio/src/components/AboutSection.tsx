@@ -77,7 +77,7 @@ export default function AboutSection() {
                   strategic thinking and business understanding to cybersecurity challenges.
                 </p>
                 <p>
-                  With 3 production-ready projects and 57 MITRE ATT&CK techniques covered, I'm rapidly building 
+                  With 3 production-ready projects and 10 MITRE ATT&CK techniques covered (70% automation), I'm rapidly building 
                   expertise in Active Directory security, C programming, and offensive security research. 
                   This hands-on approach is designed to bridge the gap between business strategy 
                   and technical execution.
