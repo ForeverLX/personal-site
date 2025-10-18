@@ -114,15 +114,14 @@ export default function SophisticatedNavigation() {
           {/* Mobile menu button */}
           <motion.div
             className="lg:hidden"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
           >
             <button
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={isOpen}
-              className="text-gray-300 hover:text-red-400 transition-colors duration-200 p-2"
+              className="text-white hover:text-red-400 transition-colors duration-200 p-2 bg-gray-900/50 rounded-lg"
             >
               <svg
                 className="h-6 w-6"

@@ -25,9 +25,17 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
 
   // SVG Data URI generator for text masks with responsive sizing
   const createTextMask = (text: string) => {
-    // Reduce font size for mobile devices to prevent text cutoff
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
-    const fontSize = isMobile ? '100' : '140'
+    // Aggressive font size reduction for mobile devices to prevent text cutoff
+    const width = typeof window !== 'undefined' ? window.innerWidth : 1200
+    let fontSize = '140'
+    
+    if (width < 400) {
+      fontSize = '65'  // iPhone SE and smaller
+    } else if (width < 640) {
+      fontSize = '85'  // Small mobile devices
+    } else if (width < 768) {
+      fontSize = '110' // Tablets
+    }
     
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
