@@ -18,19 +18,27 @@ export default function ContactSection() {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     
     try {
       // Use environment variable for Formspree endpoint
       const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || 'mjkalgaj';
+      
+      // Create FormData object (Formspree's expected format)
+      const formDataObj = new FormData();
+      formDataObj.append('name', formData.name);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('subject', formData.subject);
+      formDataObj.append('message', formData.message);
+      
       const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
+        body: formDataObj,
         headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+          'Accept': 'application/json'
+        }
       })
 
       if (response.ok) {
