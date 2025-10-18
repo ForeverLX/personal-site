@@ -83,7 +83,7 @@ export default function SophisticatedNavigation() {
 
           {/* Desktop Navigation */}
           <motion.div
-            className="hidden md:block"
+            className="hidden lg:block"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -113,7 +113,7 @@ export default function SophisticatedNavigation() {
 
           {/* Mobile menu button */}
           <motion.div
-            className="md:hidden"
+            className="lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -153,7 +153,7 @@ export default function SophisticatedNavigation() {
 
       {/* Mobile Navigation */}
       <motion.div
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
+        className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}
         initial={{ opacity: 0, height: 0 }}
         animate={{
           opacity: isOpen ? 1 : 0,
