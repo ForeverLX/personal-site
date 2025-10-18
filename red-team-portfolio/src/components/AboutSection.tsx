@@ -217,7 +217,7 @@ export default function AboutSection() {
               <span className="text-blue-400 text-xl">💼</span>
             </motion.a>
             <motion.a
-              href="https://github.com/DarriusGrate"
+              href="https://github.com/ForeverLX"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 bg-gray-600/20 rounded-full border border-gray-600/30 flex items-center justify-center hover:bg-gray-600/30 transition-colors"

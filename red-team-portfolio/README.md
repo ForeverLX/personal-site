@@ -3,7 +3,7 @@
 > **Professional red team operator and security researcher**  
 > Transitioning from consulting to offensive security through hands-on projects and research
 
-[![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.33-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
@@ -58,7 +58,7 @@
 ## 🛠️ Tech Stack
 
 ### Core Framework
-- **Next.js 14.2.5** - React framework with App Router
+- **Next.js 14.2.33** - React framework with App Router (latest security patches)
 - **TypeScript 5.0** - Type-safe development
 - **Tailwind CSS 3.4.1** - Utility-first styling
 
@@ -112,15 +112,39 @@
 Create a `.env.local` file in the root directory:
 
 ```env
-# Formspree endpoint for contact form
-NEXT_PUBLIC_FORMSPREE_ID=your_formspree_form_id
+# Formspree Configuration
+NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id_here
+
+# GitHub Configuration
+NEXT_PUBLIC_GITHUB_USERNAME=your_github_username
+
+# Google Analytics Configuration
+NEXT_PUBLIC_GA_ID=your_google_analytics_id
+
+# Base URL Configuration
+NEXT_PUBLIC_BASE_URL=https://your-domain.com
 ```
 
-### Getting Formspree ID
+### Environment Variable Details
+
+**NEXT_PUBLIC_FORMSPREE_ID**
 1. Sign up at [formspree.io](https://formspree.io)
 2. Create a new form
-3. Copy the form ID (e.g., `xyzabc123`)
-4. Add to `.env.local` as shown above
+3. Copy the form ID (e.g., `mjkalgaj`)
+4. Add to `.env.local`
+
+**NEXT_PUBLIC_GITHUB_USERNAME**
+- Your GitHub username for live stats integration
+- Used by the GitHub API to fetch repository and activity data
+
+**NEXT_PUBLIC_GA_ID**
+- Your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+- Sign up at [analytics.google.com](https://analytics.google.com)
+
+**NEXT_PUBLIC_BASE_URL**
+- Your production domain URL
+- Used for metadata and SEO (e.g., `https://darriusgrate.com`)
+- Defaults to `http://localhost:3001` in development
 
 ## 📁 Project Structure
 
@@ -170,6 +194,9 @@ src/
 
 3. **Environment Variables in Vercel**
    - `NEXT_PUBLIC_FORMSPREE_ID`: Your Formspree form ID
+   - `NEXT_PUBLIC_GITHUB_USERNAME`: Your GitHub username
+   - `NEXT_PUBLIC_GA_ID`: Your Google Analytics measurement ID
+   - `NEXT_PUBLIC_BASE_URL`: Your production URL (e.g., `https://darriusgrate.com`)
 
 ### Other Platforms
 

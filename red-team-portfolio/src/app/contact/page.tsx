@@ -6,31 +6,31 @@ import { useState } from 'react'
 const contactMethods = [
   {
     platform: 'Email',
-    value: 'darrius@example.com',
+    value: 'contact@darriusgrate.com',
     icon: '📧',
     description: 'Best for detailed inquiries and project discussions',
-    link: 'mailto:darrius@example.com'
+    link: 'mailto:contact@darriusgrate.com'
   },
   {
     platform: 'Twitter/X',
-    value: '@foreverlx',
+    value: '@DarriusGrate',
     icon: '🐦',
     description: 'Follow for updates on projects and security research',
-    link: 'https://x.com/foreverlx'
+    link: 'https://x.com/DarriusGrate'
   },
   {
     platform: 'GitHub',
-    value: 'github.com/foreverlx',
+    value: 'github.com/ForeverLX',
     icon: '💻',
     description: 'View my code, projects, and contributions',
-    link: 'https://github.com/foreverlx'
+    link: 'https://github.com/ForeverLX'
   },
   {
     platform: 'LinkedIn',
     value: 'linkedin.com/in/darrius-grate',
     icon: '💼',
     description: 'Connect professionally',
-    link: 'https://www.linkedin.com/in/darrius-grate'
+    link: 'https://www.linkedin.com/in/darrius-grate/'
   }
 ]
 
@@ -84,9 +84,18 @@ export default function ContactPage() {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', company: '', subject: '', message: '' })
       } else {
+        // Enhanced error logging for debugging
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Formspree error:', {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorData,
+          formspreeId: formspreeId
+        })
         setSubmitStatus('error')
       }
     } catch (error) {
+      console.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -139,17 +148,19 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                          Name *
+                          Name <span className="text-red-500">*</span>
+                          <span className="sr-only">(required)</span>
                         </label>
                         <input
                           type="text"
                           id="name"
                           name="name"
                           required
+                          aria-required="true"
                           value={formData.name}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
@@ -158,13 +169,15 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                          Email *
+                          Email <span className="text-red-500">*</span>
+                          <span className="sr-only">(required)</span>
                         </label>
                         <input
                           type="email"
                           id="email"
                           name="email"
                           required
+                          aria-required="true"
                           value={formData.email}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
@@ -190,12 +203,14 @@ export default function ContactPage() {
 
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                        Subject *
+                        Subject <span className="text-red-500">*</span>
+                        <span className="sr-only">(required)</span>
                       </label>
                       <select
                         id="subject"
                         name="subject"
                         required
+                        aria-required="true"
                         value={formData.subject}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
@@ -211,12 +226,14 @@ export default function ContactPage() {
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                        Message *
+                        Message <span className="text-red-500">*</span>
+                        <span className="sr-only">(required)</span>
                       </label>
                       <textarea
                         id="message"
                         name="message"
                         required
+                        aria-required="true"
                         rows={6}
                         value={formData.message}
                         onChange={handleInputChange}

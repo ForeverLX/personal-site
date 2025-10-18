@@ -233,7 +233,7 @@ Open to:
 
 ${colors.red}Contact Methods:${colors.reset}
   ${colors.blue}Email${colors.reset}:    contact@darriusgrate.com
-  ${colors.blue}Twitter${colors.reset}:  @ForeverLX
+  ${colors.blue}Twitter${colors.reset}:  @DarriusGrate
   ${colors.blue}LinkedIn${colors.reset}: linkedin.com/in/darrius-grate
   ${colors.blue}GitHub${colors.reset}:   github.com/ForeverLX
 

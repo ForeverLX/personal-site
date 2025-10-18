@@ -338,7 +338,7 @@ ACLGuardConfig config = {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Build from Source</h3>
                 <CodeBlock
-                  code={`git clone https://github.com/DarriusGrate/ACLGuard.git
+                  code={`git clone https://github.com/ForeverLX/ACLGuard-v2.0-Active-Directory-Recon-.git
 cd ACLGuard
 mkdir build && cd build
 cmake ..
@@ -461,7 +461,7 @@ rule2 = "CN=Service Accounts:ALERT_DAILY"`}
         >
           <div className="flex justify-center space-x-8 mb-6">
             <a
-              href="https://github.com/DarriusGrate/ACLGuard"
+              href="https://github.com/ForeverLX/ACLGuard-v2.0-Active-Directory-Recon-"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
@@ -470,7 +470,7 @@ rule2 = "CN=Service Accounts:ALERT_DAILY"`}
               <span>GitHub Repository</span>
             </a>
             <a
-              href="https://github.com/DarriusGrate/ACLGuard/issues"
+              href="https://github.com/ForeverLX/ACLGuard-v2.0-Active-Directory-Recon-/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"

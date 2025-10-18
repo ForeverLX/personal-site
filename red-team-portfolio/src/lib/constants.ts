@@ -80,3 +80,4 @@ export const SECURITY_HEADERS = {
   REFERRER_POLICY: 'strict-origin-when-cross-origin',
   PERMISSIONS_POLICY: 'camera=(), microphone=(), geolocation=()',
 } as const
+

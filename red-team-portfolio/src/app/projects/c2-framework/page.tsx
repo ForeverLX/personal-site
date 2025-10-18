@@ -407,7 +407,7 @@ C2Plugin file_exfil_plugin = {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Build from Source</h3>
                 <CodeBlock
-                  code={`git clone https://github.com/DarriusGrate/C2-Framework.git
+                  code={`git clone https://github.com/ForeverLX/Red-Team-Portfolio.git
 cd C2-Framework
 mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -537,7 +537,7 @@ auto_load = true`}
         >
           <div className="flex justify-center space-x-8 mb-6">
             <a
-              href="https://github.com/DarriusGrate/C2-Framework"
+              href="https://github.com/ForeverLX/Red-Team-Portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
@@ -546,7 +546,7 @@ auto_load = true`}
               <span>GitHub Repository</span>
             </a>
             <a
-              href="https://github.com/DarriusGrate/C2-Framework/issues"
+              href="https://github.com/ForeverLX/Red-Team-Portfolio/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"

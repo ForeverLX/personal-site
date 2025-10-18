@@ -284,6 +284,7 @@ export class TourMode {
   }
 
   private executeCommand(step: TourStep): void {
+    console.log('TourMode.executeCommand called, step:', step);
     if (step.narrative) {
       this.callbacks.write(`\r\n${step.narrative}\r\n\r\n`);
     }
@@ -294,7 +295,9 @@ export class TourMode {
     }
 
     if (step.autoAdvance && step.autoAdvanceDelay) {
+      console.log('TourMode.executeCommand: Setting auto-advance timeout for', step.autoAdvanceDelay, 'ms');
       setTimeout(() => {
+        console.log('TourMode.executeCommand: Auto-advance timeout triggered, isActive:', this.isActive);
         if (this.isActive) {
           this.nextStep();
         }
@@ -382,15 +385,21 @@ export class TourMode {
   }
 
   private nextStep(): void {
+    console.log('TourMode.nextStep called, current step:', this.currentStep);
     this.currentStep++;
+    console.log('TourMode.nextStep: Moving to step', this.currentStep, 'of', this.steps.length);
     
     if (this.currentStep < this.steps.length) {
       setTimeout(() => {
         if (this.isActive) {
+          console.log('TourMode.nextStep: Executing step', this.currentStep);
           this.executeStep();
+        } else {
+          console.log('TourMode.nextStep: Tour no longer active, skipping step execution');
         }
       }, TOUR_CONFIG.STEP_DELAY); // Small delay between steps
     } else {
+      console.log('TourMode.nextStep: Tour complete, calling complete()');
       this.complete();
     }
   }

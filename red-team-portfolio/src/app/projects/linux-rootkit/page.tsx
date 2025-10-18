@@ -476,7 +476,7 @@ static void cleanup_forensic_artifacts(void) {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Build from Source</h3>
                 <CodeBlock
-                  code={`git clone https://github.com/DarriusGrate/Linux-Rootkit.git
+                  code={`git clone https://github.com/ForeverLX/ACLGuard-Active-Directory-Permission-Auditor.git
 cd Linux-Rootkit
 make
 sudo insmod rootkit.ko`}
@@ -602,7 +602,7 @@ sudo rmmod rootkit`}
         >
           <div className="flex justify-center space-x-8 mb-6">
             <a
-              href="https://github.com/DarriusGrate/Linux-Rootkit"
+              href="https://github.com/ForeverLX/ACLGuard-Active-Directory-Permission-Auditor"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
@@ -611,7 +611,7 @@ sudo rmmod rootkit`}
               <span>GitHub Repository</span>
             </a>
             <a
-              href="https://github.com/DarriusGrate/Linux-Rootkit/issues"
+              href="https://github.com/ForeverLX/ACLGuard-Active-Directory-Permission-Auditor/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"

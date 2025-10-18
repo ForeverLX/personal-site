@@ -121,7 +121,7 @@ export default function BlueYardFooter() {
               </li>
               <li>
                 <a
-                  href="https://github.com/foreverlx"
+                  href="https://github.com/ForeverLX"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-red-500 transition-colors duration-200"

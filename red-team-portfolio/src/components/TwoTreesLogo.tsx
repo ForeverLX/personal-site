@@ -30,9 +30,9 @@ export default function TwoTreesLogo({
     gradient: 'bg-gradient-to-r from-red-900/20 via-purple-900/20 to-blue-900/20 rounded-lg p-4',
     ground: 'relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gradient-to-r after:from-red-500 after:via-purple-500 after:to-blue-500'
   }
-
+  
   return (
-    <motion.div 
+        <motion.div 
       className={`flex flex-col items-center justify-center ${backgroundVariants[variant]} ${className}`}
       style={{ width: config.width, height: config.height }}
       initial={{ opacity: 0, scale: 0.9 }}
@@ -109,7 +109,7 @@ export default function TwoTreesLogo({
               opacity="0.3"
               className="select-none"
             >
-              Keep Moving Forward
+        Keep Moving Forward
             </text>
           </svg>
         </motion.div>
