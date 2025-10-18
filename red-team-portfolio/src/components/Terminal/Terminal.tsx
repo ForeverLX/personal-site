@@ -175,8 +175,22 @@ export function Terminal() {
           escapeSequence += data;
           console.log('Escape sequence building:', JSON.stringify(escapeSequence));
           
-          // Up arrow: \x1b[A or \x1b[1;2A (with modifiers)
-          if (escapeSequence === '\x1b[A' || escapeSequence === '\x1b[1;2A' || escapeSequence === '\x1b[1;3A' || escapeSequence === '\x1b[1;4A' || escapeSequence === '\x1b[1;5A' || escapeSequence === '\x1b[1;6A') {
+          // Check for complete arrow key sequences immediately
+          const isUpArrow = escapeSequence === '\x1b[A' || 
+                            escapeSequence === '\x1b[1;2A' || 
+                            escapeSequence === '\x1b[1;3A' || 
+                            escapeSequence === '\x1b[1;4A' || 
+                            escapeSequence === '\x1b[1;5A' || 
+                            escapeSequence === '\x1b[1;6A';
+          
+          const isDownArrow = escapeSequence === '\x1b[B' || 
+                              escapeSequence === '\x1b[1;2B' || 
+                              escapeSequence === '\x1b[1;3B' || 
+                              escapeSequence === '\x1b[1;4B' || 
+                              escapeSequence === '\x1b[1;5B' || 
+                              escapeSequence === '\x1b[1;6B';
+          
+          if (isUpArrow) {
             console.log('Up arrow detected! History length:', commandHistory.length);
             escapeSequence = '';
             const historyLength = commandHistory.length;
@@ -200,8 +214,8 @@ export function Terminal() {
             return;
           }
           
-          // Down arrow: \x1b[B or \x1b[1;2B (with modifiers)
-          if (escapeSequence === '\x1b[B' || escapeSequence === '\x1b[1;2B' || escapeSequence === '\x1b[1;3B' || escapeSequence === '\x1b[1;4B' || escapeSequence === '\x1b[1;5B' || escapeSequence === '\x1b[1;6B') {
+          if (isDownArrow) {
+            console.log('Down arrow detected! History length:', commandHistory.length);
             escapeSequence = '';
             const historyLength = commandHistory.length;
             if (historyLength > 0 && tempHistoryIndex !== -1) {
@@ -227,12 +241,37 @@ export function Terminal() {
             return;
           }
           
+          // Only wait for more data if we're potentially building a longer sequence
+          if (escapeSequence.length === 2 && data === '[') {
+            return; // We have \x1b[, wait for next char
+          }
+          
+          if (escapeSequence.length >= 3 && escapeSequence.startsWith('\x1b[1;')) {
+            if (escapeSequence.length < 6) {
+              return; // Still building modified arrow key
+            }
+          }
+          
           // If escape sequence is incomplete, wait for more data
-          if (escapeSequence.length < 6) {
+          // Standard arrow keys are 3 chars: \x1b[A or \x1b[B
+          // Modified arrow keys are 4-5 chars: \x1b[1;5A
+          if (escapeSequence.length === 2) {
+            // We have \x1b[ - wait for the final character
+            return;
+          }
+
+          // Check if this is a complete escape sequence
+          const isCompleteArrow = 
+            escapeSequence === '\x1b[A' || escapeSequence === '\x1b[B' ||
+            escapeSequence === '\x1b[C' || escapeSequence === '\x1b[D' ||
+            (escapeSequence.length >= 4 && escapeSequence.startsWith('\x1b[1;'));
+
+          if (!isCompleteArrow && escapeSequence.length < 6) {
             return;
           }
           
           // Unknown escape sequence, clear it
+          console.log('Unknown escape sequence, clearing:', JSON.stringify(escapeSequence));
           escapeSequence = '';
           return;
         }
@@ -246,7 +285,11 @@ export function Terminal() {
               tourModeRef.current.handleInput(currentLine.trim());
             } else {
               // Save command to history
-              setCommandHistory(prev => [...prev, currentLine.trim()]);
+              setCommandHistory(prev => {
+                const newHistory = [...prev, currentLine.trim()];
+                console.log('Command added to history:', currentLine.trim(), 'Total:', newHistory.length);
+                return newHistory;
+              });
               tempHistoryIndex = -1;
               setHistoryIndex(-1);
               
