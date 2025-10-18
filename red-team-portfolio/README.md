@@ -20,16 +20,19 @@
 **Portfolio:** [darriusgrate.vercel.app](https://darriusgrate.vercel.app)  
 **GitHub:** [github.com/ForeverLX/Red-Team-Portfolio](https://github.com/ForeverLX/Red-Team-Portfolio)
 
-## 📸 Screenshots
+## 📸 Portfolio Highlights
 
-![Homepage](public/screenshots/homepage.png)
-*Interactive terminal with guided tour and real-time GitHub stats*
+### Interactive Terminal
+![Homepage with Terminal](public/screenshots/homepage-terminal.png)
+*Full-featured terminal with 25+ commands, guided tour, and attack simulations*
 
-![Terminal Demo](public/screenshots/terminal-demo.png)
-*Full-featured terminal with 25+ commands, attack simulations, and Easter eggs*
-
+### MITRE ATT&CK Coverage Matrix
 ![MITRE Matrix](public/screenshots/mitre-matrix.png)
-*Interactive MITRE ATT&CK coverage matrix with 57 techniques*
+*Interactive visualization of 10 techniques mapped to red team toolkit (70% coverage)*
+
+### Technical Depth
+![Technique Detail](public/screenshots/mitre-technique-detail.png)
+*Detailed technique cards showing automation level, tools, and MITRE ATT&CK integration*
 
 ## ✨ Features
 
