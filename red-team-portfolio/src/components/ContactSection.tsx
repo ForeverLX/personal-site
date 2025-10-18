@@ -1,7 +1,59 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    try {
+      // Use environment variable for Formspree endpoint
+      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || 'mjkalgaj';
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setSubmitStatus('success')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        // Enhanced error logging for debugging
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Formspree error:', {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorData,
+          formspreeId: formspreeId
+        })
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
   return (
     <section className="relative min-h-screen py-20">
       <div id="contact" className="absolute top-0 left-0 w-full h-1"></div>
@@ -148,15 +200,32 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-medium text-white mb-6">Send a Message</h3>
-            <form className="space-y-6">
+            
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg">
+                <p className="text-green-400">Message sent successfully! I'll get back to you within 24 hours.</p>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg">
+                <p className="text-red-400">There was an error sending your message. Please try again or contact me directly.</p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-                  Name
+                  Name <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  required
+                  autoComplete="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   placeholder="Your name"
                 />
@@ -164,25 +233,32 @@ export default function ContactSection() {
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-                  Email
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  required
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                  placeholder="your.email@example.com"
+                  placeholder="your@email.com"
                 />
               </div>
               
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">
-                  Subject
+                  Subject <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   placeholder="What can I help you with?"
                 />
@@ -190,12 +266,15 @@ export default function ContactSection() {
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-                  Message
+                  Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
+                  required
                   rows={6}
+                  value={formData.message}
+                  onChange={handleInputChange}
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
                   placeholder="Tell me about your project or security needs..."
                 />
@@ -203,11 +282,12 @@ export default function ContactSection() {
               
               <motion.button
                 type="submit"
-                className="w-full px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={isSubmitting}
+                className="w-full px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </motion.button>
             </form>
           </motion.div>

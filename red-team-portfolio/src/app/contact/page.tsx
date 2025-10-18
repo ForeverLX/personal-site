@@ -161,6 +161,7 @@ export default function ContactPage() {
                           name="name"
                           required
                           aria-required="true"
+                          autoComplete="name"
                           value={formData.name}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
@@ -178,6 +179,7 @@ export default function ContactPage() {
                           name="email"
                           required
                           aria-required="true"
+                          autoComplete="email"
                           value={formData.email}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
@@ -194,6 +196,7 @@ export default function ContactPage() {
                         type="text"
                         id="company"
                         name="company"
+                        autoComplete="organization"
                         value={formData.company}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"

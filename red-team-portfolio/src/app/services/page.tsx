@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const services = [
   {
@@ -143,9 +144,11 @@ export default function ServicesPage() {
                     </div>
 
                     {/* CTA Button */}
-                    <button className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-purple-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                      Get Started
-                    </button>
+                    <Link href="/contact">
+                      <button className="w-full px-6 py-3 bg-gradient-to-r from-red-600 to-purple-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                        Get Started
+                      </button>
+                    </Link>
                   </div>
                 </motion.div>
               ))}
@@ -247,12 +250,16 @@ export default function ServicesPage() {
                 Let's discuss how I can help secure your organization with professional assessments and custom solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-purple-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                  Get a Quote
-                </button>
-                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-red-500 hover:text-red-400 transition-all duration-300">
-                  View My Work
-                </button>
+                <Link href="/contact">
+                  <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-purple-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                    Get a Quote
+                  </button>
+                </Link>
+                <Link href="/projects">
+                  <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-red-500 hover:text-red-400 transition-all duration-300">
+                    View My Work
+                  </button>
+                </Link>
               </div>
             </motion.div>
           </div>

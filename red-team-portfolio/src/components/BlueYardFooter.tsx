@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import TwoTreesLogo from './TwoTreesLogo'
-// Removed Link import - using smooth scroll buttons instead
 
 export default function BlueYardFooter() {
   const currentYear = new Date().getFullYear()
@@ -73,36 +73,36 @@ export default function BlueYardFooter() {
             <h3 className="text-gray-900 font-semibold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('#about')}
+                <Link 
+                  href="/about"
                   className="text-gray-600 hover:text-red-500 transition-colors duration-200"
                 >
                   About
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('#research')}
+                <Link 
+                  href="/research"
                   className="text-gray-600 hover:text-red-500 transition-colors duration-200"
                 >
                   Research
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('#projects')}
+                <Link 
+                  href="/projects"
                   className="text-gray-600 hover:text-red-500 transition-colors duration-200"
                 >
                   Projects
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('#services')}
+                <Link 
+                  href="/services"
                   className="text-gray-600 hover:text-red-500 transition-colors duration-200"
                 >
                   Services
-                </button>
+                </Link>
               </li>
             </ul>
           </motion.div>
