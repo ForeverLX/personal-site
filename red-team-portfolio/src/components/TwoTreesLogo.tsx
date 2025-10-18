@@ -48,8 +48,8 @@ export default function TwoTreesLogo({
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <svg 
-            width={size === 'hero' ? 600 : size === 'navigation' ? 350 : 30} 
-            height={size === 'hero' ? 80 : size === 'navigation' ? 60 : 8} 
+            width={size === 'hero' ? 600 : size === 'navigation' ? 180 : 30} 
+            height={size === 'hero' ? 80 : size === 'navigation' ? 40 : 8} 
             viewBox="0 0 600 80"
             className="drop-shadow-2xl"
           >

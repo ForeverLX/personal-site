@@ -38,7 +38,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
     }
     
     const svg = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMid meet">
         <text 
           x="50%" 
           y="50%" 
