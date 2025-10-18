@@ -187,6 +187,8 @@ export default function HomepageVideoBackground() {
                 </svg>
                 <input
                   type="range"
+                  id="volume-slider"
+                  name="volume"
                   min="0"
                   max="1"
                   step="0.1"

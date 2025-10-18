@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CommandParser } from './CommandParser';
 import { CommandRegistry } from './CommandRegistry';
 import { TourMode, TourCallbacks } from './TourMode';
+import { getSearchSuggestions } from './commands/searchContent';
 import { TERMINAL_CONFIG, TOUR_CONFIG } from '@/lib/constants';
 import styles from './Terminal.module.css';
 import '@xterm/xterm/css/xterm.css';
@@ -175,7 +176,8 @@ export function Terminal() {
           console.log('Escape sequence building:', JSON.stringify(escapeSequence));
           
           // Up arrow: \x1b[A or \x1b[1;2A (with modifiers)
-          if (escapeSequence === '\x1b[A' || escapeSequence === '\x1b[1;2A' || escapeSequence === '\x1b[1;3A' || escapeSequence === '\x1b[1;4A' || escapeSequence === '\x1b[1;5A') {
+          if (escapeSequence === '\x1b[A' || escapeSequence === '\x1b[1;2A' || escapeSequence === '\x1b[1;3A' || escapeSequence === '\x1b[1;4A' || escapeSequence === '\x1b[1;5A' || escapeSequence === '\x1b[1;6A') {
+            console.log('Up arrow detected! History length:', commandHistory.length);
             escapeSequence = '';
             const historyLength = commandHistory.length;
             if (historyLength > 0) {
@@ -191,6 +193,7 @@ export function Terminal() {
               
               // Write historical command
               const histCmd = commandHistory[tempHistoryIndex];
+              console.log('Recalling command:', histCmd);
               term.write(histCmd);
               currentLine = histCmd;
             }
@@ -198,7 +201,7 @@ export function Terminal() {
           }
           
           // Down arrow: \x1b[B or \x1b[1;2B (with modifiers)
-          if (escapeSequence === '\x1b[B' || escapeSequence === '\x1b[1;2B' || escapeSequence === '\x1b[1;3B' || escapeSequence === '\x1b[1;4B' || escapeSequence === '\x1b[1;5B') {
+          if (escapeSequence === '\x1b[B' || escapeSequence === '\x1b[1;2B' || escapeSequence === '\x1b[1;3B' || escapeSequence === '\x1b[1;4B' || escapeSequence === '\x1b[1;5B' || escapeSequence === '\x1b[1;6B') {
             escapeSequence = '';
             const historyLength = commandHistory.length;
             if (historyLength > 0 && tempHistoryIndex !== -1) {
@@ -262,22 +265,45 @@ export function Terminal() {
         }
         // Tab key (code === 9)
         else if (code === 9) {
-          // Get all available commands
-          const registry = new CommandRegistry();
-          const allCommands = registry.getAllCommands();
-          const matches = allCommands.filter(cmd => cmd.startsWith(currentLine));
+          const parts = currentLine.trim().split(' ');
+          const command = parts[0];
+          const args = parts.slice(1);
           
-          if (matches.length === 1) {
-            // Single match - complete it
-            const completion = matches[0].slice(currentLine.length);
-            term.write(completion);
-            currentLine += completion;
-          } else if (matches.length > 1) {
-            // Multiple matches - show them
-            term.writeln('');
-            term.writeln(matches.join('  '));
-            prompt();
-            term.write(currentLine);
+          if (args.length === 0) {
+            // Command completion
+            const registry = new CommandRegistry();
+            const allCommands = registry.getAllCommands();
+            const matches = allCommands.filter(cmd => cmd.startsWith(command));
+            
+            if (matches.length === 1) {
+              // Single match - complete it
+              const completion = matches[0].slice(command.length);
+              term.write(completion);
+              currentLine += completion;
+            } else if (matches.length > 1) {
+              // Multiple matches - show them
+              term.writeln('');
+              term.writeln(matches.join('  '));
+              prompt();
+              term.write(currentLine);
+            }
+          } else if (command === 'grep') {
+            // Grep argument completion
+            const partialTerm = args.join(' ');
+            const suggestions = getSearchSuggestions(partialTerm);
+            
+            if (suggestions.length === 1) {
+              // Single match - complete it
+              const completion = suggestions[0].slice(partialTerm.length);
+              term.write(completion);
+              currentLine += completion;
+            } else if (suggestions.length > 1) {
+              // Multiple matches - show them
+              term.writeln('');
+              term.writeln(suggestions.join('  '));
+              prompt();
+              term.write(currentLine);
+            }
           }
           // No matches - do nothing (no beep)
         }
