@@ -8,9 +8,16 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
 
+## 📊 Project Stats
+
+![GitHub last commit](https://img.shields.io/github/last-commit/ForeverLX/red-team-portfolio?style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/ForeverLX/red-team-portfolio?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/ForeverLX/red-team-portfolio?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/ForeverLX/red-team-portfolio?style=social)
+
 ## 🚀 Live Demo
 
-**Portfolio:** [darriusgrate.com](https://darriusgrate.com)  
+**Portfolio:** [darriusgrate.vercel.app](https://darriusgrate.vercel.app)  
 **GitHub:** [github.com/ForeverLX/Red-Team-Portfolio](https://github.com/ForeverLX/Red-Team-Portfolio)
 
 ## 📸 Screenshots
@@ -274,13 +281,35 @@ This is a personal portfolio project, but suggestions and improvements are welco
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## 📖 Documentation
+
+Comprehensive technical documentation is available in the [`docs/`](docs/) folder:
+
+### Core Documentation
+- **[QA Report](docs/QA-REPORT.md)** - Comprehensive testing methodology and results (3-layer testing)
+- **[Security](docs/SECURITY.md)** - Threat model, security architecture, and defensive measures
+- **[Architecture](docs/ARCHITECTURE.md)** - Technical decisions, trade-offs, and system design
+- **[Terminal Commands](docs/TERMINAL-COMMANDS.md)** - Complete command reference and usage guide
+- **[Performance](docs/PERFORMANCE.md)** - Optimization strategies and performance budgets
+- **[Lessons Learned](docs/LESSONS-LEARNED.md)** - Technical challenges, insights, and growth
+
+### Project Management
+- **[Changelog](CHANGELOG.md)** - Version history and release notes
+- **[Contributing](CONTRIBUTING.md)** - Guidelines for contributors and collaborators
+- **[License](LICENSE)** - MIT License terms and conditions
+
+### Setup & Configuration
+- **[Environment Variables](.env.example)** - Configuration template and setup instructions
+
+This documentation demonstrates professional development practices, systematic thinking, and security-first architecture - key qualities for red team operations.
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Connect
 
-- **Portfolio**: [darriusgrate.com](https://darriusgrate.com)
+- **Portfolio**: [darriusgrate.vercel.app](https://darriusgrate.vercel.app)
 - **GitHub**: [github.com/ForeverLX](https://github.com/ForeverLX)
 - **LinkedIn**: [linkedin.com/in/darrius-grate](https://www.linkedin.com/in/darrius-grate)
 - **Twitter**: [@DarriusGrate](https://x.com/DarriusGrate)

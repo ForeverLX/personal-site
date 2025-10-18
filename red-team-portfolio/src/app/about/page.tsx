@@ -233,6 +233,92 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Portfolio Development Process Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.9 }}
+              className="text-center"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white via-red-400 to-purple-400 bg-clip-text text-transparent">
+                Portfolio Development Process
+              </h2>
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-8">
+                <p className="text-lg text-gray-300 mb-8 text-center">
+                  This portfolio itself demonstrates my red team methodology through systematic development, 
+                  comprehensive testing, and security-first architecture.
+                </p>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <h3 className="text-xl font-semibold text-red-500 mb-4">Security-First Architecture</h3>
+                    <ul className="text-gray-400 space-y-2 text-left">
+                      <li>• Content Security Policy implementation</li>
+                      <li>• Security headers (X-Frame-Options, X-Content-Type-Options)</li>
+                      <li>• Input validation on all user inputs</li>
+                      <li>• No unsafe practices (eval, dangerouslySetInnerHTML)</li>
+                      <li>• Environment variable management</li>
+                    </ul>
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-xl font-semibold text-red-500 mb-4">Comprehensive Testing</h3>
+                    <ul className="text-gray-400 space-y-2 text-left">
+                      <li>• 10+ hours systematic QA across 3 layers</li>
+                      <li>• Functional correctness (14 pages, 30+ components)</li>
+                      <li>• Edge case resilience (input fuzzing, network failures)</li>
+                      <li>• Security validation (XSS attempts, injection testing)</li>
+                      <li>• Cross-browser and device testing</li>
+                    </ul>
+                  </div>
+
+                  <div className="text-center">
+                    <h3 className="text-xl font-semibold text-red-500 mb-4">Adversarial Mindset</h3>
+                    <ul className="text-gray-400 space-y-2 text-left">
+                      <li>• Tested terminal with malformed commands</li>
+                      <li>• Validated contact form against spam patterns</li>
+                      <li>• Simulated API failures and degraded conditions</li>
+                      <li>• Documented known limitations transparently</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-700">
+                  <div className="text-center">
+                    <h3 className="text-xl font-semibold text-red-500 mb-4">Documentation as Portfolio Artifact</h3>
+                    <p className="text-gray-400 mb-4">
+                      Professional documentation demonstrates technical communication skills critical for red team operations:
+                    </p>
+                    <ul className="text-gray-400 space-y-2 text-left max-w-2xl mx-auto">
+                      <li>• QA Report: 10+ hours systematic testing documented with reproducible steps</li>
+                      <li>• Security Doc: Threat modeling, defense-in-depth strategy, incident response</li>
+                      <li>• Architecture Doc: Technical decisions with trade-offs and alternatives considered</li>
+                      <li>• Terminal Commands: Complete reference guide with usage examples</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-700 text-center">
+                  <p className="text-gray-400">
+                    Full technical documentation available in the{' '}
+                    <a 
+                      href="https://github.com/ForeverLX/red-team-portfolio/tree/main/docs" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-red-500 hover:text-red-400 underline"
+                    >
+                      project repository
+                    </a>
+                    , including QA reports, security considerations, and architecture decisions.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Certifications Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
