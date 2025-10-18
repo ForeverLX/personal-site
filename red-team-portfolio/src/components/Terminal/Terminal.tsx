@@ -15,7 +15,7 @@ export function Terminal() {
   const [isClient, setIsClient] = useState(false);
   const [tourMode, setTourMode] = useState<TourMode | null>(null);
   const [isTourActive, setIsTourActive] = useState(false);
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const commandHistoryRef = useRef<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
 
   // Refs to track tour state in closures (for input handling)
@@ -166,9 +166,68 @@ export function Terminal() {
         
         // Handle escape sequences (arrow keys)
         if (code === 27) {
-          escapeSequence = data;
-          console.log('Escape sequence started:', JSON.stringify(data));
-          return;
+          // Check if we received the complete escape sequence at once
+          if (data.length >= 3) {
+            // We have a complete escape sequence like \x1b[A
+            console.log('Complete escape sequence received:', JSON.stringify(data));
+            
+            // Check if it's an arrow key
+            const isUpArrow = data === '\x1b[A' || data.startsWith('\x1b[1;') && data.endsWith('A');
+            const isDownArrow = data === '\x1b[B' || data.startsWith('\x1b[1;') && data.endsWith('B');
+            
+            if (isUpArrow) {
+              console.log('Up arrow detected! History length:', commandHistoryRef.current.length);
+              const historyLength = commandHistoryRef.current.length;
+              if (historyLength > 0) {
+                if (tempHistoryIndex === -1) {
+                  tempHistoryIndex = historyLength - 1;
+                } else if (tempHistoryIndex > 0) {
+                  tempHistoryIndex--;
+                }
+                
+                term.write('\r\x1b[K');
+                prompt();
+                
+                const histCmd = commandHistoryRef.current[tempHistoryIndex];
+                console.log('Recalling command:', histCmd);
+                term.write(histCmd);
+                currentLine = histCmd;
+              }
+              return;
+            }
+            
+            if (isDownArrow) {
+              console.log('Down arrow detected! History length:', commandHistoryRef.current.length);
+              const historyLength = commandHistoryRef.current.length;
+              if (historyLength > 0 && tempHistoryIndex !== -1) {
+                if (tempHistoryIndex < historyLength - 1) {
+                  tempHistoryIndex++;
+                  
+                  term.write('\r\x1b[K');
+                  prompt();
+                  
+                  const histCmd = commandHistoryRef.current[tempHistoryIndex];
+                  term.write(histCmd);
+                  currentLine = histCmd;
+                } else {
+                  tempHistoryIndex = -1;
+                  term.write('\r\x1b[K');
+                  prompt();
+                  currentLine = '';
+                }
+              }
+              return;
+            }
+            
+            // Unknown complete sequence, ignore
+            console.log('Unknown complete escape sequence:', JSON.stringify(data));
+            return;
+          } else {
+            // Incomplete sequence, store and wait for more
+            escapeSequence = data;
+            console.log('Escape sequence started (incomplete):', JSON.stringify(data));
+            return;
+          }
         }
         
         if (escapeSequence) {
@@ -191,9 +250,9 @@ export function Terminal() {
                               escapeSequence === '\x1b[1;6B';
           
           if (isUpArrow) {
-            console.log('Up arrow detected! History length:', commandHistory.length);
+            console.log('Up arrow detected (incremental)! History length:', commandHistoryRef.current.length);
             escapeSequence = '';
-            const historyLength = commandHistory.length;
+            const historyLength = commandHistoryRef.current.length;
             if (historyLength > 0) {
               if (tempHistoryIndex === -1) {
                 tempHistoryIndex = historyLength - 1;
@@ -206,7 +265,7 @@ export function Terminal() {
               prompt();
               
               // Write historical command
-              const histCmd = commandHistory[tempHistoryIndex];
+              const histCmd = commandHistoryRef.current[tempHistoryIndex];
               console.log('Recalling command:', histCmd);
               term.write(histCmd);
               currentLine = histCmd;
@@ -215,9 +274,9 @@ export function Terminal() {
           }
           
           if (isDownArrow) {
-            console.log('Down arrow detected! History length:', commandHistory.length);
+            console.log('Down arrow detected (incremental)! History length:', commandHistoryRef.current.length);
             escapeSequence = '';
-            const historyLength = commandHistory.length;
+            const historyLength = commandHistoryRef.current.length;
             if (historyLength > 0 && tempHistoryIndex !== -1) {
               if (tempHistoryIndex < historyLength - 1) {
                 tempHistoryIndex++;
@@ -227,7 +286,7 @@ export function Terminal() {
                 prompt();
                 
                 // Write historical command
-                const histCmd = commandHistory[tempHistoryIndex];
+                const histCmd = commandHistoryRef.current[tempHistoryIndex];
                 term.write(histCmd);
                 currentLine = histCmd;
               } else {
@@ -285,11 +344,8 @@ export function Terminal() {
               tourModeRef.current.handleInput(currentLine.trim());
             } else {
               // Save command to history
-              setCommandHistory(prev => {
-                const newHistory = [...prev, currentLine.trim()];
-                console.log('Command added to history:', currentLine.trim(), 'Total:', newHistory.length);
-                return newHistory;
-              });
+              commandHistoryRef.current = [...commandHistoryRef.current, currentLine.trim()];
+              console.log('Command added to history:', currentLine.trim(), 'Total:', commandHistoryRef.current.length);
               tempHistoryIndex = -1;
               setHistoryIndex(-1);
               
