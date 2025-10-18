@@ -23,8 +23,12 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
     setIsClient(true)
   }, [])
 
-  // SVG Data URI generator for text masks
+  // SVG Data URI generator for text masks with responsive sizing
   const createTextMask = (text: string) => {
+    // Reduce font size for mobile devices to prevent text cutoff
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
+    const fontSize = isMobile ? '100' : '140'
+    
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
         <text 
@@ -32,7 +36,7 @@ export default function VideoSunriseSunset({ mode, onIntroComplete, className = 
           y="50%" 
           text-anchor="middle" 
           dominant-baseline="middle" 
-          font-size="140" 
+          font-size="${fontSize}" 
           font-weight="900" 
           font-family="system-ui, -apple-system, sans-serif"
           fill="white"

@@ -120,7 +120,9 @@ export default function SophisticatedNavigation() {
           >
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-red-400 transition-colors duration-200"
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isOpen}
+              className="text-gray-300 hover:text-red-400 transition-colors duration-200 p-2"
             >
               <svg
                 className="h-6 w-6"

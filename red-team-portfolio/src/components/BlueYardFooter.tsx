@@ -62,7 +62,7 @@ export default function BlueYardFooter() {
                 Red Team Portfolio
               </span>
             </div>
-            <p className="text-gray-600 text-base max-w-md leading-relaxed">
+            <p className="text-gray-400 text-base max-w-md leading-relaxed">
               Showcasing the transition from professional consultant to red team operator. 
               Specializing in Active Directory security, C programming, and offensive security research.
             </p>
@@ -75,7 +75,7 @@ export default function BlueYardFooter() {
               <li>
                 <Link 
                   href="/about"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   About
                 </Link>
@@ -83,7 +83,7 @@ export default function BlueYardFooter() {
               <li>
                 <Link 
                   href="/research"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   Research
                 </Link>
@@ -91,7 +91,7 @@ export default function BlueYardFooter() {
               <li>
                 <Link 
                   href="/projects"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   Projects
                 </Link>
@@ -99,7 +99,7 @@ export default function BlueYardFooter() {
               <li>
                 <Link 
                   href="/services"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   Services
                 </Link>
@@ -114,7 +114,7 @@ export default function BlueYardFooter() {
               <li>
                 <a
                   href="mailto:contact@darriusgrate.com"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   Email
                 </a>
@@ -124,7 +124,7 @@ export default function BlueYardFooter() {
                   href="https://github.com/ForeverLX"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   GitHub
                 </a>
@@ -134,7 +134,7 @@ export default function BlueYardFooter() {
                   href="https://www.linkedin.com/in/darrius-grate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   LinkedIn
                 </a>
@@ -144,7 +144,7 @@ export default function BlueYardFooter() {
                   href="https://x.com/DarriusGrate"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
                 >
                   Twitter/X
                 </a>
@@ -158,10 +158,10 @@ export default function BlueYardFooter() {
           className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center"
           variants={itemVariants}
         >
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 text-sm">
             © {currentYear} Darrius Grate. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm mt-2 sm:mt-0">
+          <p className="text-gray-400 text-sm mt-2 sm:mt-0">
             Built with Next.js & Tailwind CSS
           </p>
         </motion.div>

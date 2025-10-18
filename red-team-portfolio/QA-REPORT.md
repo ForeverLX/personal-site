@@ -179,3 +179,19 @@ The portfolio website is fully functional, responsive, and ready for production 
 **Test Date**: January 15, 2025  
 **Next Review**: Post-deployment verification recommended
 
+---
+
+## Accessibility Improvements (January 18, 2025)
+
+### Updates Made:
+1. **ForeverLX Mobile Text**: Reduced font size from 140px to 100px for mobile devices (< 640px width)
+2. **Hamburger Menu**: Added `aria-label` and `aria-expanded` attributes for screen readers
+3. **Color Contrast**: Improved footer text from `text-gray-600` to `text-gray-400` for WCAG compliance
+4. **Video Captions**: Decorative videos (sunrise/sunset intro) do not require captions per WCAG 2.1 guidelines - no dialogue or information conveyed through audio
+
+### Lighthouse Score Improvements:
+- **Accessibility**: 91 → 95+ (expected)
+- **Best Practices**: No change expected
+- **Performance**: No change expected
+- **SEO**: No change expected
+
