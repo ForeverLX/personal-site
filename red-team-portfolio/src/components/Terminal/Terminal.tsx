@@ -166,14 +166,16 @@ export function Terminal() {
         // Handle escape sequences (arrow keys)
         if (code === 27) {
           escapeSequence = data;
+          console.log('Escape sequence started:', JSON.stringify(data));
           return;
         }
         
         if (escapeSequence) {
           escapeSequence += data;
+          console.log('Escape sequence building:', JSON.stringify(escapeSequence));
           
-          // Up arrow: \x1b[A
-          if (escapeSequence === '\x1b[A') {
+          // Up arrow: \x1b[A or \x1b[1;2A (with modifiers)
+          if (escapeSequence === '\x1b[A' || escapeSequence === '\x1b[1;2A' || escapeSequence === '\x1b[1;3A' || escapeSequence === '\x1b[1;4A' || escapeSequence === '\x1b[1;5A') {
             escapeSequence = '';
             const historyLength = commandHistory.length;
             if (historyLength > 0) {
@@ -195,8 +197,8 @@ export function Terminal() {
             return;
           }
           
-          // Down arrow: \x1b[B
-          if (escapeSequence === '\x1b[B') {
+          // Down arrow: \x1b[B or \x1b[1;2B (with modifiers)
+          if (escapeSequence === '\x1b[B' || escapeSequence === '\x1b[1;2B' || escapeSequence === '\x1b[1;3B' || escapeSequence === '\x1b[1;4B' || escapeSequence === '\x1b[1;5B') {
             escapeSequence = '';
             const historyLength = commandHistory.length;
             if (historyLength > 0 && tempHistoryIndex !== -1) {
@@ -223,7 +225,7 @@ export function Terminal() {
           }
           
           // If escape sequence is incomplete, wait for more data
-          if (escapeSequence.length < 3) {
+          if (escapeSequence.length < 6) {
             return;
           }
           
