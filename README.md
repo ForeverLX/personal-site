@@ -24,7 +24,8 @@ to adapt tooling beyond standard Kali distributions for real-world engagement co
 ## Featured Assessment: TELECOM INC. Active Directory Compromise
 
 <p align="center">
-  <img src="certifications/CWL_AD-RTS_Certificate.png" alt="CWL AD-RTS Certification" width="400"/>
+  <img width="994" height="703" alt="AD_RTS" src="https://github.com/user-attachments/assets/0dff9f0d-786d-4c02-873f-fe58ca6e1e13" />
+
 </p>
 
 **[📄 Download Full Report (PDF)](./assessments/TELECOM-INC-AD-Assessment.pdf)**  
