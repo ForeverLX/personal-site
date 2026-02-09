@@ -10,15 +10,15 @@
 
 ## 📊 Project Stats
 
-![GitHub last commit](https://img.shields.io/github/last-commit/ForeverLX/red-team-portfolio?style=flat-square)
-![GitHub code size](https://img.shields.io/github/languages/code-size/ForeverLX/red-team-portfolio?style=flat-square)
-![Lines of code](https://img.shields.io/tokei/lines/github/ForeverLX/red-team-portfolio?style=flat-square)
-![GitHub stars](https://img.shields.io/github/stars/ForeverLX/red-team-portfolio?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/ForeverLX/personal-site?style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/ForeverLX/personal-site?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/ForeverLX/personal-site?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/ForeverLX/personal-site?style=social)
 
 ## 🚀 Live Demo
 
 **Portfolio:** [darriusgrate.vercel.app](https://darriusgrate.vercel.app)  
-**GitHub:** [github.com/ForeverLX/Red-Team-Portfolio](https://github.com/ForeverLX/Red-Team-Portfolio)
+**GitHub:** [github.com/ForeverLX/personal-site](https://github.com/ForeverLX/personal-site)
 
 ## 📸 Portfolio Highlights
 
@@ -92,8 +92,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ForeverLX/Red-Team-Portfolio.git
-   cd Red-Team-Portfolio
+   git clone https://github.com/ForeverLX/personal-site.git
+   cd personal-site
    ```
 
 2. **Install dependencies**

@@ -302,7 +302,7 @@ export default function AboutPage() {
                   <p className="text-gray-400">
                     Full technical documentation available in the{' '}
                     <a 
-                      href="https://github.com/ForeverLX/red-team-portfolio/tree/main/docs" 
+                      href="https://github.com/ForeverLX/personal-site/tree/main/docs" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-red-500 hover:text-red-400 underline"

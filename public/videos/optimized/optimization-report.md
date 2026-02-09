@@ -24,11 +24,11 @@ Generated: Tue Oct 14 10:22:49 AM PDT 2025
 
 ## Next Steps
 
-1. Review the optimized videos in `/home/paradigm/red-team-portfolio/public/videos/optimized`
+1. Review the optimized videos in `public/videos/optimized`
 2. Choose your preferred sunrise video
 3. Choose your preferred sunset video
 4. Rename them to `sunrise.mp4` and `sunset.mp4`
-5. Move them to `/home/paradigm/red-team-portfolio/public/videos` (replacing the placeholder files)
+5. Move them to `public/videos` (replacing the placeholder files)
 
 ## Technical Details
 
