@@ -1,321 +1,330 @@
-# Offensive Security Portfolio
-**Darrius Grate** | Penetration Testing & Red Team Operations
+# Red Team Portfolio
 
----
+> **Professional red team operator and security researcher**  
+> Build-first offensive security portfolio with projects, writeups, and research
 
-## About Me
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.33-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.1-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
 
-Offensive security professional specializing in Active Directory exploitation, 
-Windows privilege escalation, and enterprise infrastructure assessment. I focus 
-on realistic attack simulation with emphasis on business impact analysis and 
-actionable remediation guidance.
+## 📊 Project Stats
 
-**Technical Focus Areas:**
-- Active Directory security (Kerberos attacks, ADCS exploitation, credential harvesting)
-- Windows post-exploitation (token manipulation, LSASS dumping, lateral movement)
-- Enterprise infrastructure (ESXi/vCenter, database security, virtualization)
-- Living-off-the-land techniques on modern Windows environments
+![GitHub last commit](https://img.shields.io/github/last-commit/ForeverLX/red-team-portfolio?style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/ForeverLX/red-team-portfolio?style=flat-square)
+![Lines of code](https://img.shields.io/tokei/lines/github/ForeverLX/red-team-portfolio?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/ForeverLX/red-team-portfolio?style=social)
 
-**Current Environment:** Arch Linux (custom pentest build) - demonstrates ability 
-to adapt tooling beyond standard Kali distributions for real-world engagement constraints.
+## 🚀 Live Demo
 
----
+**Portfolio:** [darriusgrate.vercel.app](https://darriusgrate.vercel.app)  
+**GitHub:** [github.com/ForeverLX/Red-Team-Portfolio](https://github.com/ForeverLX/Red-Team-Portfolio)
 
-## Featured Assessment: TELECOM INC. Active Directory Compromise
+## 📸 Portfolio Highlights
 
-<p align="center">
-  <img width="994" height="703" alt="AD_RTS" src="https://github.com/user-attachments/assets/0dff9f0d-786d-4c02-873f-fe58ca6e1e13" />
+### Interactive Terminal
+![Homepage with Terminal](public/screenshots/homepage-terminal.png)
+*Full-featured terminal with 25+ commands, guided tour, and attack simulations*
 
-</p>
+### MITRE ATT&CK Coverage Matrix
+![MITRE Matrix](public/screenshots/mitre-matrix.png)
+*Interactive visualization of 5 techniques mapped to active tooling coverage*
 
-**[📄 Download Full Report (PDF)](./assessments/TELECOM-INC-AD-Assessment.pdf)**  
-**[🔧 Technical Challenges Document](./assessments/AD-RTS-Technical-Challenges.md)**
+### Technical Depth
+![Technique Detail](public/screenshots/mitre-technique-detail.png)
+*Detailed technique cards showing automation level, tools, and MITRE ATT&CK integration*
 
-### Executive Summary
+## ✨ Features
 
-Complete domain compromise achieved through systematic exploitation of Active 
-Directory misconfigurations, demonstrating attack progression from unauthenticated 
-network access to complete infrastructure control within 3 hours of active exploitation 
-(additional 4.5 hours of documented troubleshooting).
+### 🖥️ Interactive Terminal
+- **25+ Commands**: `help`, `whoami`, `projects`, `skills`, `contact`, `tour`, `attack-sim`
+- **Guided Tour**: 9-step interactive walkthrough of the portfolio
+- **Attack Simulations**: Kerberoasting, Golden Ticket, AS-REP Roasting demos
+- **Easter Eggs**: `sudo`, `cowsay`, `sl`, `telnet`, `man`, `wget`, `ssh`
+- **Command History**: Up/down arrow navigation
+- **Tab Completion**: Smart command suggestions
 
-**Attack Chain:**  
-Unauthenticated → AS-REP Roasting → MSSQL Exploitation → SYSTEM Escalation → 
-LSASS Credential Harvesting → ADCS ESC1 Abuse → Domain Administrator → 
-ESXi Hypervisor Lateral Movement → Complete Infrastructure Control
+### 🎯 MITRE ATT&CK Matrix
+- **5 MITRE ATT&CK Techniques**: Interactive coverage visualization tied to ACLGuard automation
+- **Real-time Stats**: Coverage percentages and technique counts
+- **Detailed Cards**: Click any technique for full details
+- **Filter Options**: View by coverage level (Full, Partial, None)
+- **External Links**: Direct links to MITRE documentation
 
-### Key Technical Capabilities Demonstrated
+### 📊 Live GitHub Stats
+- **Real-time Data**: Auto-refreshes every 5 minutes
+- **Commit Streak**: Current streak and total commits
+- **Repository Stats**: Public repos, stars, followers
+- **Recent Activity**: Last 5 commits with timestamps
+- **Error Handling**: Graceful fallbacks for API issues
 
-**Advanced Active Directory Exploitation:**
-- Kerberos AS-REP Roasting (offline credential theft without authentication)
-- ADCS ESC1 exploitation (certificate-based privilege escalation to Domain Admin)
-- Pass-the-hash lateral movement (NTLM hash authentication)
-- LSASS memory dumping (credential extraction from live systems)
+### 🎨 Visual Design
+- **Dual Identity**: Sunrise/Sunset theme with professional typography
+- **Responsive Layout**: Optimized for desktop and mobile
+- **Smooth Animations**: Framer Motion powered transitions
+- **Accessibility**: ARIA labels, keyboard navigation, screen reader support
+- **Performance**: Optimized videos, lazy loading, code splitting
 
-**Windows Privilege Escalation:**
-- SeImpersonate token manipulation via GodPotato
-- Service account exploitation (MSSQL xp_cmdshell abuse)
-- Living-off-the-land techniques (built-in Windows tools for stealth)
+## 🛠️ Tech Stack
 
-**Infrastructure Compromise:**
-- VMware ESXi hypervisor exploitation via pyVmomi
-- Guest VM command execution through VMware Tools API
-- Multi-platform operations (Windows AD + Linux guest systems)
+### Core Framework
+- **Next.js 14.2.33** - React framework with App Router (latest security patches)
+- **TypeScript 5.0** - Type-safe development
+- **Tailwind CSS 3.4.1** - Utility-first styling
 
-**Professional Documentation:**
-- Executive summary for non-technical stakeholders
-- Business impact analysis with regulatory compliance context (GDPR, PCI-DSS, FCC)
-- Detailed remediation guidance for blue team implementation
-- MITRE ATT&CK framework mapping
+### Interactive Components
+- **xterm.js 5.5.0** - Terminal emulator
+- **Framer Motion 11.0.0** - Animation library
+- **React 18** - UI library
 
-### Assessment Statistics
+### Development Tools
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **PostCSS** - CSS processing
 
-| Metric | Value |
-|--------|-------|
-| **Assessment Duration** | 25 hours (3 hours exploitation + 4.5 hours troubleshooting + 17.5 hours documentation) |
-| **Objectives Achieved** | 12/12 (100%) |
-| **Critical Findings** | 3 (ADCS ESC1, ESXi credential exposure, xp_cmdshell abuse) |
-| **High Findings** | 2 (AS-REP Roasting, weak password policy) |
-| **Systems Compromised** | Domain Controller, SQL Server, ESXi Hypervisor, Guest VMs |
-| **Privilege Escalation Path** | Unauthenticated → Domain User → SYSTEM → Domain Admin → Hypervisor Root |
+## 🚀 Quick Start
 
-### Technical Environment
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-**Attack Platform:** Arch Linux (custom pentest build)  
-**Target Environment:** CyberWarfare Labs AD-RTS Scenario 1  
-**Scope:** Enterprise Windows Active Directory + VMware ESXi infrastructure
+### Installation
 
-**Why Arch Linux?** Unlike Kali-based tutorials, this assessment required adapting 
-tooling to a non-standard environment, demonstrating real-world problem-solving 
-when standard tools don't work as expected. This mirrors corporate pentest 
-environments where Kali may not be approved or available.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ForeverLX/Red-Team-Portfolio.git
+   cd Red-Team-Portfolio
+   ```
 
-### Key Findings
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-**Critical Severity:**
+3. **Set up environment variables**
+   ```bash
+   # Create .env.local file
+   echo "NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id" > .env.local
+   ```
 
-1. **ADCS ESC1 Misconfiguration (CVSSv3: 9.8)**
-   - Unrestricted Subject Alternative Name (SAN) in certificate templates
-   - Enabled privilege escalation from domain user to Domain Administrator
-   - Bypassed traditional privilege escalation paths via certificate authentication
-   - **Business Impact:** Complete domain takeover, access to all 10,000+ customer records
+4. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-2. **Cleartext ESXi Credentials in Active Directory (CVSSv3: 9.9)**
-   - Hypervisor root credentials stored in plaintext in AD user notes field
-   - Enabled infrastructure-wide compromise from single domain breach
-   - **Business Impact:** Ransomware risk across all virtualized workloads, complete infrastructure rebuild required for recovery
+5. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
 
-3. **MSSQL xp_cmdshell Exploitation (CVSSv3: 9.0)**
-   - Service account with sysadmin privileges and SeImpersonate token capability
-   - Direct path to SYSTEM-level code execution on critical database server
-   - **Business Impact:** Customer database exfiltration (PII, call records, billing data), regulatory violations
+## 🔧 Environment Variables
 
-**High Severity:**
+Create a `.env.local` file in the root directory:
 
-4. **Kerberos Pre-Authentication Disabled (CVSSv3: 7.5)**
-   - AS-REP Roasting enabled offline credential theft without detection
-   - Combined with weak password policy (cracked in seconds via dictionary attack)
+```env
+# Formspree Configuration
+NEXT_PUBLIC_FORMSPREE_ID=your_formspree_id_here
 
-5. **Inadequate Password Complexity Requirements**
-   - Standard wordlist cracking succeeded against production credentials
-   - Password reuse across critical infrastructure (MSSQL and ESXi)
+# GitHub Configuration
+NEXT_PUBLIC_GITHUB_USERNAME=your_github_username
 
-### Remediation Highlights
+# Google Analytics Configuration
+NEXT_PUBLIC_GA_ID=your_google_analytics_id
 
-**Immediate Actions Required:**
-- Disable ESC1-vulnerable certificate templates or set "Enrollee Supplies Subject" to False
-- Remove all cleartext credentials from Active Directory user/computer properties
-- Revoke sysadmin privileges from non-essential accounts; disable xp_cmdshell
-- Enable Kerberos pre-authentication for all user accounts
-- Force password reset for all compromised accounts
-
-**Strategic Recommendations:**
-- Implement Privileged Access Management (PAM) solution for infrastructure credentials
-- Deploy phishing-resistant MFA (FIDO2/WebAuthn) for administrative accounts
-- Enforce 14+ character password policy with complexity requirements
-- Implement certificate template audit process and regular ADCS security reviews
-- Integrate SIEM alerting for ADCS enrollment activity and xp_cmdshell execution
-
----
-
-## Technical Skills
-
-**Offensive Security:**
-- Active Directory exploitation (Kerberos attacks, ADCS abuse, DCSync)
-- Windows privilege escalation (token manipulation, service exploitation)
-- Credential harvesting (LSASS dumping, NTLM/Kerberos ticket extraction)
-- Lateral movement (pass-the-hash, WMI, PowerShell remoting)
-- Living-off-the-land techniques (minimal tool footprint, evasion)
-
-**Infrastructure Security:**
-- VMware ESXi/vCenter exploitation
-- Database security assessment (MSSQL, PostgreSQL)
-- Virtualization security (guest escape research, hypervisor attacks)
-- Network services (DNS, LDAP, SMB, RPC)
-
-**Development & Scripting:**
-- Python (automation, API interaction, exploit development)
-- PowerShell (post-exploitation, Windows automation)
-- Bash (Linux automation, tool chaining)
-- SQL (database enumeration, injection techniques)
-
-**Tools & Frameworks:**
-- **Reconnaissance:** Nmap, dig, ldapsearch, rpcclient
-- **Exploitation:** Impacket suite, Metasploit, custom exploits
-- **Post-Exploitation:** Mimikatz, pypykatz, GodPotato, Rubeus
-- **ADCS:** Certipy, Certify, certificate abuse techniques
-- **VMware:** pyVmomi, govc, ESXi exploitation frameworks
-- **Password Cracking:** Hashcat (GPU), John the Ripper
-
-**Operating Systems:**
-- Arch Linux (daily driver - custom pentest build)
-- Kali Linux (familiarity with standard tooling)
-- Windows Server (2016/2019/2022 exploitation and hardening)
-- Various Linux distributions (Ubuntu, CentOS, RHEL)
-
----
-
-## Certifications
-
-**Current:**
-- CyberWarfare Labs: Active Directory Red Team Specialist (AD-RTS)
-
-**In Progress:**
-- Offensive Security Certified Professional (OSCP) - Scheduled
-- Certified Red Team Operator (CRTO) - Scheduled
-
----
-
-## Professional Approach
-
-**Assessment Philosophy:**
-- Business impact analysis ties technical findings to organizational risk
-- Detailed remediation guidance enables blue team implementation
-- Systematic troubleshooting demonstrates real-world operational constraints
-- Professional documentation suitable for executive and technical audiences
-
-**Why My Work Stands Out:**
-1. **Real Problem-Solving:** 4.5 hours of documented troubleshooting shows 
-   adaptability beyond scripted tutorials
-2. **Blue Team Perspective:** Understanding defensive controls (firewall evasion, 
-   detection avoidance) from offensive operations
-3. **Communication Skills:** Executive summaries, business impact analysis, and 
-   technical depth for different stakeholder audiences
-4. **Professional Standards:** Reports formatted for actual client delivery, not 
-   just portfolio demonstrations
-
----
-
-## Currently Seeking
-
-**Target Roles:**
-- Penetration Tester (Internal/External/Web Application)
-- Red Team Operator
-- Offensive Security Engineer (Purple Team preferred)
-- Security Researcher (Active Directory focus)
-
-**Ideal Environment:**
-- Organizations with mature security programs seeking to test detection capabilities
-- Companies transitioning from compliance-focused to adversary-focused security
-- Teams emphasizing realistic attack simulation and purple team collaboration
-- Environments that value documentation and knowledge sharing
-
-**Location:** Las Vegas, Nevada (remote or hybrid preferred)
-
----
-
-## Contact
-
-**Email:** [your email]  
-**LinkedIn:** [your LinkedIn profile]  
-**Location:** Las Vegas, NV  
-
----
-
-## Acknowledgments
-
-This assessment was conducted in a controlled lab environment provided by 
-CyberWarfare Labs (AD-RTS Scenario 1) for professional skill development and 
-portfolio demonstration purposes. Special thanks to the CWL team for creating 
-realistic training scenarios that mirror real-world enterprise environments.
-
----
-
-*This portfolio demonstrates technical capabilities for employment consideration. 
-All assessments were conducted in authorized lab environments. No unauthorized 
-testing was performed.*
+# Base URL Configuration
+NEXT_PUBLIC_BASE_URL=https://your-domain.com
 ```
 
+### Environment Variable Details
+
+**NEXT_PUBLIC_FORMSPREE_ID**
+1. Sign up at [formspree.io](https://formspree.io)
+2. Create a new form
+3. Copy the form ID (e.g., `mjkalgaj`)
+4. Add to `.env.local`
+
+**NEXT_PUBLIC_GITHUB_USERNAME**
+- Your GitHub username for live stats integration
+- Used by the GitHub API to fetch repository and activity data
+
+**NEXT_PUBLIC_GA_ID**
+- Your Google Analytics measurement ID (format: G-XXXXXXXXXX)
+- Sign up at [analytics.google.com](https://analytics.google.com)
+
+**NEXT_PUBLIC_BASE_URL**
+- Your production domain URL
+- Used for metadata and SEO (e.g., `https://darriusgrate.com`)
+- Defaults to `http://localhost:3001` in development
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── contact/           # Contact page with form
+│   ├── projects/          # Project showcase
+│   ├── research/          # Research topics
+│   └── layout.tsx         # Root layout with metadata
+├── components/            # React components
+│   ├── Terminal/          # Interactive terminal
+│   │   ├── Terminal.tsx   # Main terminal component
+│   │   ├── TourMode.ts    # Guided tour logic
+│   │   ├── commands/      # Terminal commands
+│   │   └── utils/         # Terminal utilities
+│   ├── MitreMatrix/       # MITRE ATT&CK matrix
+│   │   ├── MitreMatrix.tsx
+│   │   ├── TechniqueCard.tsx
+│   │   └── data/          # Coverage data
+│   └── ...                # Other components
+├── hooks/                 # Custom React hooks
+│   └── useGitHubStats.ts  # GitHub API integration
+├── lib/                   # Utility libraries
+│   └── constants.ts       # Application constants
+└── styles/                # Global styles
+```
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Deploy to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Add environment variables in dashboard
+   - Deploy automatically
+
+3. **Environment Variables in Vercel**
+   - `NEXT_PUBLIC_FORMSPREE_ID`: Your Formspree form ID
+   - `NEXT_PUBLIC_GITHUB_USERNAME`: Your GitHub username
+   - `NEXT_PUBLIC_GA_ID`: Your Google Analytics measurement ID
+   - `NEXT_PUBLIC_BASE_URL`: Your production URL (e.g., `https://darriusgrate.com`)
+
+### Other Platforms
+
+The app can be deployed to any platform that supports Next.js:
+- **Netlify**: Use `npm run build && npm run export`
+- **Railway**: Direct deployment from GitHub
+- **DigitalOcean App Platform**: Node.js app with build command `npm run build`
+
+## 🧪 Testing
+
+### Manual Testing Checklist
+
+- [ ] **Homepage loads** - Videos play, terminal initializes
+- [ ] **Tour mode** - Completes all 9 steps without errors
+- [ ] **Navigation** - All links work (Projects, Research, About, Contact)
+- [ ] **Contact form** - Submits successfully
+- [ ] **GitHub stats** - Display correctly and auto-refresh
+- [ ] **MITRE Matrix** - Interactive features work
+- [ ] **Mobile responsive** - Layout works on phone viewport
+- [ ] **Accessibility** - Keyboard navigation, screen reader support
+
+### Performance Testing
+
+- [ ] **Lighthouse audit** - 90+ on all metrics
+- [ ] **Video loading** - Compressed files load quickly
+- [ ] **Terminal responsiveness** - Commands execute smoothly
+- [ ] **Cross-browser** - Chrome, Firefox, Safari compatibility
+
+## 🔒 Security Features
+
+- **Security Headers**: X-Frame-Options, CSP, X-Content-Type-Options
+- **Input Sanitization**: All user inputs properly handled
+- **API Rate Limiting**: GitHub API calls respect rate limits
+- **Environment Variables**: Sensitive data not exposed in client code
+- **Error Boundaries**: Graceful error handling for production
+
+## 🎯 Key Commands
+
+### Terminal Commands
+```bash
+help          # Show all available commands
+whoami        # Display developer information
+projects      # List all projects
+skills        # Show technical skills
+contact       # Display contact information
+tour          # Start guided tour
+attack-sim    # Run attack simulations
+clear         # Clear terminal
+history       # Show command history
+```
+
+### Attack Simulations
+```bash
+attack-sim kerberoast    # Kerberoasting demonstration
+attack-sim golden-ticket # Golden Ticket attack
+attack-sim asrep         # AS-REP Roasting
+attack-sim dcsync        # DCSync attack
+```
+
+## 📈 Performance Metrics
+
+- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
+- **Largest Contentful Paint**: < 2.5s
+- **First Input Delay**: < 100ms
+- **Cumulative Layout Shift**: < 0.1
+- **Bundle Size**: Optimized with code splitting
+
+## 🤝 Contributing
+
+This is a personal portfolio project, but suggestions and improvements are welcome:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📖 Documentation
+
+Comprehensive technical documentation is available in the [`docs/`](docs/) folder:
+
+### Core Documentation
+- **[QA Report](docs/QA-REPORT.md)** - Comprehensive testing methodology and results (3-layer testing)
+- **[Security](docs/SECURITY.md)** - Threat model, security architecture, and defensive measures
+- **[Architecture](docs/ARCHITECTURE.md)** - Technical decisions, trade-offs, and system design
+- **[Terminal Commands](docs/TERMINAL-COMMANDS.md)** - Complete command reference and usage guide
+- **[Performance](docs/PERFORMANCE.md)** - Optimization strategies and performance budgets
+- **[Lessons Learned](docs/LESSONS-LEARNED.md)** - Technical challenges, insights, and growth
+
+### Project Management
+- **[Changelog](CHANGELOG.md)** - Version history and release notes
+- **[Contributing](CONTRIBUTING.md)** - Guidelines for contributors and collaborators
+- **[License](LICENSE)** - MIT License terms and conditions
+
+### Setup & Configuration
+- **[Environment Variables](.env.example)** - Configuration template and setup instructions
+
+This documentation demonstrates professional development practices, systematic thinking, and security-first architecture - key qualities for red team operations.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 Connect
+
+- **Portfolio**: [darriusgrate.vercel.app](https://darriusgrate.vercel.app)
+- **GitHub**: [github.com/ForeverLX](https://github.com/ForeverLX)
+- **LinkedIn**: [linkedin.com/in/darrius-grate](https://www.linkedin.com/in/darrius-grate)
+- **Twitter**: [@DarriusGrate](https://x.com/DarriusGrate)
+- **Email**: [contact@darriusgrate.com](mailto:contact@darriusgrate.com)
+
+## 🙏 Acknowledgments
+
+- **MITRE ATT&CK Framework** - For the comprehensive security framework
+- **xterm.js** - For the excellent terminal emulator
+- **Next.js Team** - For the amazing React framework
+- **Tailwind CSS** - For the utility-first CSS framework
+- **Framer Motion** - For smooth animations
+
 ---
 
-## LinkedIn Post Template (For Tomorrow)
-
-**After CWL approval, post this on LinkedIn:**
-```
-I'm excited to share my latest penetration testing portfolio piece: a comprehensive 
-Active Directory compromise assessment demonstrating the path from unauthenticated 
-network access to complete infrastructure control.
-
-🎯 Key Achievements:
-- Complete domain compromise via ADCS ESC1 exploitation (certificate-based privilege escalation)
-- ESXi hypervisor lateral movement using pyVmomi guest operations
-- 12/12 assessment objectives achieved within 25 hours
-- Professional-grade documentation with business impact analysis
-
-🔧 Technical Highlights:
-- Kerberos AS-REP Roasting for offline credential theft
-- SeImpersonate token manipulation via GodPotato
-- LSASS memory dumping for domain credential extraction
-- VMware ESXi API exploitation for guest VM command execution
-
-📊 What Makes This Different:
-This assessment was conducted on Arch Linux (not Kali), requiring tool adaptation 
-and systematic troubleshooting—demonstrating real-world constraints where standard 
-tools don't work as expected. 4.5 hours of documented troubleshooting mirrors 
-actual engagement challenges, not just successful exploitation.
-
-The full report includes executive summary, MITRE ATT&CK mapping, regulatory 
-compliance impact (GDPR/PCI-DSS/FCC), and detailed blue team remediation guidance.
-
-🔗 Full portfolio: [your GitHub link]
-
-Special thanks to CyberWarfare Labs for creating realistic training environments 
-that prepare offensive security professionals for real-world engagements.
-
-#PenetrationTesting #CyberSecurity #RedTeam #ActiveDirectory #InfoSec #OffensiveSecurity
-
----
-
-I'm currently seeking opportunities in penetration testing, red team operations, 
-or offensive security engineering roles. Open to relocation or remote positions.
-```
-
-**Why this works:**
-- ✅ Specific achievements (numbers, techniques)
-- ✅ Shows problem-solving (Arch Linux troubleshooting)
-- ✅ Professional presentation (business impact, not just hacking)
-- ✅ Call to action (seeking opportunities)
-- ✅ Proper hashtags for visibility
-- ✅ Attribution to CWL (professional courtesy)
-
----
-
-## Application Strategy - Starting Tomorrow
-
-### **Priority 1: Meta Purple Team Role**
-
-**Timeline:** Apply within 24 hours of CWL approval
-
-**Cover Letter (First Paragraph):**
-```
-I'm applying for the Offensive Security Engineer (Purple Team) position because 
-my portfolio demonstrates the exact intersection of skills your team requires: 
-advanced offensive capabilities with blue team operational awareness.
-
-My recent Active Directory assessment showcases both successful exploitation 
-(ADCS ESC1, token manipulation, hypervisor lateral movement) and systematic 
-troubleshooting that mirrors real-world engagement constraints. Conducted on 
-Arch Linux rather than Kali, this assessment required adapting standard tools 
-when they failed—exactly the problem-solving resilience your Purple Team needs 
-when testing detection capabilities against novel attack paths.
-
-[Continue with specific job requirement mapping...]
+**Built with ❤️ and lots of ☕ by [Darrius Grate](https://github.com/ForeverLX)**
