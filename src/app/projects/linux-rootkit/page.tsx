@@ -43,8 +43,9 @@ export default function ReverseEngineeringProjectPage() {
         <Callout
           type="info"
           title="Current focus"
-          description="I document reversing and shellcode challenges in a writeup-first format. The goal is to capture real reasoning, not just answers."
-        />
+        >
+          I document reversing and shellcode challenges in a writeup-first format. The goal is to capture real reasoning, not just answers.
+        </Callout>
 
         <section className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-8 mt-8">
           <h2 className="text-2xl font-semibold text-white mb-4">Focus areas</h2>

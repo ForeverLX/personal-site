@@ -21,8 +21,9 @@ export default function WriteupsSpotlightPost() {
           <Callout
             type="info"
             title="Focus"
-            description="This slot now highlights reverse engineering and binary exploitation writeups with clear reasoning, evidence, and mitigations."
-          />
+          >
+            This slot now highlights reverse engineering and binary exploitation writeups with clear reasoning, evidence, and mitigations.
+          </Callout>
         </motion.div>
 
         <section className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-8 mb-8">
