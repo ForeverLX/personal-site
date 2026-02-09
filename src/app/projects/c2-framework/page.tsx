@@ -53,8 +53,10 @@ export default function C2FrameworkProjectPage() {
           <Callout
             type="info"
             title="Why this channel"
-            description="I want a place to document hard‑won lessons from labs and real tooling work — with the actual reasoning, tradeoffs, and verification steps that don’t fit in short writeups."
-          />
+          >
+            I want a place to document hard‑won lessons from labs and real tooling work — with the actual reasoning,
+            tradeoffs, and verification steps that don’t fit in short writeups.
+          </Callout>
 
           <section className="bg-gray-800/30 border border-gray-700/50 rounded-xl p-8">
             <h2 className="text-2xl font-semibold text-white mb-4">Planned coverage</h2>
