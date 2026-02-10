@@ -31,7 +31,7 @@ export default function FeaturedProjectSpotlight() {
             <span className="text-red-500">Featured</span> Project
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            The centerpiece of my Red Team Operations Toolkit
+            The backbone of my offensive security workflow
           </p>
         </motion.div>
 
@@ -54,35 +54,34 @@ export default function FeaturedProjectSpotlight() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-bold text-white">ACLGuard v2.0</h3>
+                  <h3 className="text-3xl font-bold text-white">Offsec Workstation</h3>
                   <div className="flex items-center space-x-2 mt-1">
-                    <span className="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full">
-                      Active Development
+                    <span className="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded-full">
+                      Living Build
                     </span>
-                    <span className="text-gray-400 text-sm">Week 3/12</span>
+                    <span className="text-gray-400 text-sm">Arch + Sway</span>
                   </div>
                 </div>
               </div>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Advanced Active Directory ACL analysis and privilege escalation detection tool. 
-                Automates enumeration, identifies attack paths, and generates custom payloads 
-                for red team operations.
+                A documented offensive security workstation built for speed, stability, and repeatable workflows.
+                It tracks tools in PATH, performance tuning decisions, and the exact setup that powers my labs and writeups.
               </p>
 
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center p-4 bg-gray-700/30 rounded-lg">
-                  <div className="text-2xl font-bold text-red-500">47</div>
-                  <div className="text-sm text-gray-400">GitHub Stars</div>
+                  <div className="text-2xl font-bold text-red-500">21s</div>
+                  <div className="text-sm text-gray-400">Boot Time</div>
                 </div>
                 <div className="text-center p-4 bg-gray-700/30 rounded-lg">
-                  <div className="text-2xl font-bold text-red-500">1.2k</div>
-                  <div className="text-sm text-gray-400">Commits</div>
+                  <div className="text-2xl font-bold text-red-500">15+</div>
+                  <div className="text-sm text-gray-400">Core Tools</div>
                 </div>
                 <div className="text-center p-4 bg-gray-700/30 rounded-lg">
                   <div className="text-2xl font-bold text-red-500">3</div>
-                  <div className="text-sm text-gray-400">Tools Built</div>
+                  <div className="text-sm text-gray-400">Docs Tracked</div>
                 </div>
               </div>
 
@@ -90,11 +89,11 @@ export default function FeaturedProjectSpotlight() {
               <div>
                 <h4 className="text-white font-medium mb-3">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Python</span>
-                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Active Directory</span>
-                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">BloodHound</span>
-                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Kerberos</span>
-                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">LDAP</span>
+                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Arch Linux</span>
+                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Sway</span>
+                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Wayland</span>
+                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">NetworkManager</span>
+                  <span className="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">systemd</span>
                 </div>
               </div>
 
@@ -102,7 +101,7 @@ export default function FeaturedProjectSpotlight() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <motion.button
                   onClick={() => {
-                    window.location.href = '/projects/aclguard'
+                    window.location.href = '/projects/offsec-workstation'
                   }}
                   className="inline-flex items-center space-x-2 px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-colors duration-200"
                   whileHover={{ scale: 1.05 }}
@@ -137,17 +136,16 @@ export default function FeaturedProjectSpotlight() {
                     <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-400 text-sm ml-2">ACLGuard v2.0</span>
+                    <span className="text-gray-400 text-sm ml-2">Offsec Workstation</span>
                   </div>
                   
                   <div className="space-y-2 text-sm font-mono">
-                    <div className="text-green-400">$ python aclguard.py --domain vulnerable.local</div>
-                    <div className="text-gray-300">[+] Enumerating Active Directory...</div>
-                    <div className="text-gray-300">[+] Found 15 users with SPN</div>
-                    <div className="text-yellow-400">[!] Kerberoasting opportunity detected</div>
-                    <div className="text-gray-300">[+] Generating attack paths...</div>
-                    <div className="text-red-400">[!] 3 privilege escalation paths found</div>
-                    <div className="text-gray-300">[+] Attack chain visualization complete</div>
+                    <div className="text-green-400">$ rg --files docs</div>
+                    <div className="text-gray-300">docs/system-snapshot.md</div>
+                    <div className="text-gray-300">docs/tools-inventory.md</div>
+                    <div className="text-gray-300">docs/performance-optimization.md</div>
+                    <div className="text-yellow-400">[!] Wi-Fi power save: review</div>
+                    <div className="text-gray-300">[+] Boot analysis captured</div>
                   </div>
                 </div>
               </div>

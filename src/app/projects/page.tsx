@@ -6,6 +6,16 @@ import { MitreMatrix } from '@/components/MitreMatrix/MitreMatrix'
 
 const projects = [
   {
+    id: 'offsec-workstation',
+    title: 'Offsec Workstation',
+    status: 'Living Build',
+    statusColor: 'bg-blue-500',
+    tech: ['Arch Linux', 'Sway', 'Wayland'],
+    description: 'Documented offensive security workstation with performance tuning, tool inventory, and repeatable setup notes.',
+    link: '/projects/offsec-workstation',
+    icon: '🖥️'
+  },
+  {
     id: 'aclguard',
     title: 'ACLGuard v2.0',
     status: 'Active Development',
